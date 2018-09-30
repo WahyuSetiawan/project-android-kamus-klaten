@@ -20,4 +20,12 @@ public class FragmentPencarian extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return (binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false)).getRoot();
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.tabCategory.addTab(binding.tabCategory.newTab().setText("Bahasa Jawa"));
+        binding.tabCategory.addTab(binding.tabCategory.newTab().setText("Bahasa Indonesia"));
+    }
 }
