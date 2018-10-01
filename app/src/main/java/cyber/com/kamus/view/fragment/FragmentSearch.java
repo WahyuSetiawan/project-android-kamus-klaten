@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.FragmentSearchBinding;
 
-public class FragmentPencarian extends Fragment {
+public class FragmentSearch extends Fragment {
     private FragmentSearchBinding binding;
 
     @Nullable

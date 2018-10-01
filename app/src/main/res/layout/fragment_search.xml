@@ -9,6 +9,7 @@
         tools:context=".view.MainActivity">
 
         <android.support.v7.widget.CardView
+            android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_margin="10dp"
@@ -35,14 +36,17 @@
 
         </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabCategory"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/layout" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tabCategory" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
