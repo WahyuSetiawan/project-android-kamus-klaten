@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.BantuanActivity"
+            android:theme="@style/AppTheme.noActionBar" />
+        <activity
+            android:name=".view.TentangActivity"
+            android:theme="@style/AppTheme.noActionBar" />
     </application>
 
 </manifest>

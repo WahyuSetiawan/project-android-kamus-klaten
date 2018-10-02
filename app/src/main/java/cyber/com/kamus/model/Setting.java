@@ -1,16 +1,27 @@
 package cyber.com.kamus.model;
 
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
+import cyber.com.kamus.adapter.AdapterColor;
+import cyber.com.kamus.util.listener.ListenerView;
+import cyber.com.kamus.util.listener.ListenerViewHolder;
 import cyber.com.kamus.view.fragment.FragmentPengaturan;
 
 public class Setting {
     String name;
     FragmentPengaturan.TypePengaturan typePengaturan;
 
+    private RecyclerView.Adapter<RecyclerView.ViewHolder> adapter;
+
+    private ListenerView.onCheckedViewHolder onCheckedViewHolder;
+    private ListenerView.onClickViewHolder onClickViewHolder;
+    private ListenerView.onLongClickViewHolder onLongClickViewHolder;
+
     public Setting(String name, FragmentPengaturan.TypePengaturan typePengaturan) {
         this.name = name;
         this.typePengaturan = typePengaturan;
     }
-
 
     public String getName() {
         return name;
@@ -24,7 +35,32 @@ public class Setting {
         return typePengaturan;
     }
 
-    public void setTypePengaturan(FragmentPengaturan.TypePengaturan typePengaturan) {
-        this.typePengaturan = typePengaturan;
+
+    public ListenerView.onCheckedViewHolder getOnCheckedViewHolder() {
+        return onCheckedViewHolder;
+    }
+
+    public void setOnCheckedViewHolder(ListenerView.onCheckedViewHolder onCheckedViewHolder) {
+        this.onCheckedViewHolder = onCheckedViewHolder;
+    }
+
+    public ListenerView.onClickViewHolder getOnClickViewHolder() {
+        return onClickViewHolder;
+    }
+
+    public void setOnClickViewHolder(ListenerView.onClickViewHolder onClickViewHolder) {
+        this.onClickViewHolder = onClickViewHolder;
+    }
+
+    public ListenerView.onLongClickViewHolder getOnLongClickViewHolder() {
+        return onLongClickViewHolder;
+    }
+
+    public void setAdapter(RecyclerView.Adapter adapterColor) {
+        this.adapter = adapterColor;
+    }
+
+    public RecyclerView.Adapter<RecyclerView.ViewHolder> getAdapterColor(){
+        return this.adapter;
     }
 }

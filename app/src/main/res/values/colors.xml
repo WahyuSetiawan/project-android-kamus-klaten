@@ -10,4 +10,16 @@
     <color name="kamus_dark">#37474F</color>
 
     <color name="kamus_hitam">#212121</color>
+
+    <color name="kamus_theme_FF6F00">#FF6F00</color>
+    <color name="kamus_theme_D32F2F">#D32F2F</color>
+    <color name="kamus_theme_1976D2">#1976D2</color>
+    <color name="kamus_theme_00796B">#00796B</color>
+    <color name="kamus_theme_388E3C">#388E3C</color>
+    <color name="kamus_theme_512DA8">#512DA8</color>
+    <color name="kamus_theme_7B1FA2">#7B1FA2</color>
+    <color name="kamus_theme_C2185B">#C2185B</color>
+    <color name="kamus_theme_FBC02D">#FBC02D</color>
+    <color name="kamus_theme_0097A7">#0097A7</color>
+
 </resources>

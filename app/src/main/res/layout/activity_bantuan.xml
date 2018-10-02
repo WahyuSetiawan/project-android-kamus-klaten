@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/subtitle"
+            style="@style/kamus.string.subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Bantuan"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis, eros a varius volutpat, dolor felis tincidunt diam, ac aliquet libero justo ut est. Quisque et ligula dapibus sem finibus convallis id a lorem. Integer consectetur sem ac libero aliquet, at commodo odio pellentesque. In hac habitasse platea dictumst. Vestibulum molestie turpis sit amet magna pharetra aliquet. Nam aliquet, mauris sed scelerisque auctor, sem tortor ornare nisl, quis vulputate odio erat sit amet augue. Duis eget fermentum dui. Proin non sapien in dolor hendrerit facilisis nec eu lacus. Duis elit dui, lacinia in vestibulum at, scelerisque non massa. Etiam consectetur velit in felis luctus congue. Suspendisse potenti. Aliquam ligula risus, mollis at augue in, mattis dapibus lectus. Nam hendrerit sapien id dui semper venenatis."
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/subtitle" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

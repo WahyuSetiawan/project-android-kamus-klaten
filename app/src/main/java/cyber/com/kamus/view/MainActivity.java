@@ -15,11 +15,11 @@ import cyber.com.kamus.util.Helper;
 import cyber.com.kamus.view.viewmodel.ViewModelMainActivity;
 
 public class MainActivity extends AppCompatActivity implements ViewModelMainActivity.Action {
-
     public ActivityNavigationBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme_noActionBar_readMode);
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_navigation);
         binding.setViewModel(new ViewModelMainActivity(this));
@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
 
         Helper.openFragment(this, new FragmentSearch(), R.id.fragment);
     }
-
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {

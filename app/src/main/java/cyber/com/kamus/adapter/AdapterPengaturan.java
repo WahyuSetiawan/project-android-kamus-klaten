@@ -4,18 +4,23 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 
 import java.util.ArrayList;
 
+import cyber.com.kamus.Preferences.PreferencesSetting;
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.FragmentPengaturanChangeModeBinding;
 import cyber.com.kamus.databinding.FragmentPengaturanColorBinding;
 import cyber.com.kamus.databinding.FragmentPengaturanDirectionBinding;
 import cyber.com.kamus.model.Setting;
 import cyber.com.kamus.util.decoration.GridItemDecoration;
+import cyber.com.kamus.util.listener.ListenerView;
+import cyber.com.kamus.util.listener.ListenerViewHolder;
 import cyber.com.kamus.view.fragment.FragmentPengaturan;
 
 public class AdapterPengaturan extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -51,30 +56,29 @@ public class AdapterPengaturan extends RecyclerView.Adapter<RecyclerView.ViewHol
                 VHChangeColor vh = (VHChangeColor) viewHolder;
                 vh.binding.title.setText(this.pengaturans.get(i).getName());
 
-                vh.binding.recycler.setLayoutManager(new GridLayoutManager(vh.itemView.getContext(), 5));
-                AdapterColor adapterColor = new AdapterColor();
-                vh.binding.recycler.setAdapter(adapterColor);
-                vh.binding.recycler.addItemDecoration(new GridItemDecoration(15, 15, 5, false));
-
-                adapterColor.add(R.color.kamus_orange);
-                adapterColor.add(R.color.kamus_abu_abu);
-                adapterColor.add(R.color.kamus_dark);
-                adapterColor.add(R.color.kamus_hitam);
-                adapterColor.add(R.color.kamus_orange);
-                adapterColor.add(R.color.kamus_orange);
-                adapterColor.add(R.color.kamus_orange);
-                adapterColor.add(R.color.kamus_orange);
-                adapterColor.add(R.color.kamus_orange);
-                adapterColor.add(R.color.kamus_orange);
+                vh.binding.recycler.setLayoutManager(
+                        new GridLayoutManager(vh.itemView.getContext(), 5)
+                );
+                vh.binding.recycler.setAdapter(pengaturans.get(i).getAdapterColor());
+                vh.binding.recycler.addItemDecoration(
+                        new GridItemDecoration(15, 15, 5, false)
+                );
 
                 break;
             case changemode:
                 VHSwitch vh2 = (VHSwitch) viewHolder;
                 vh2.binding.title.setText(this.pengaturans.get(i).getName());
+                vh2.onClickViewHolder = pengaturans.get(i).getOnCheckedViewHolder();
+
+                vh2.binding.changeMode.setChecked(
+                        new PreferencesSetting(vh2.itemView.getContext()).getReadMode()
+                );
+
                 break;
             case direction:
                 VHDirection vh3 = (VHDirection) viewHolder;
                 vh3.binding.title.setText(this.pengaturans.get(i).getName());
+                vh3.listenerViewHolder = pengaturans.get(i).getOnClickViewHolder();
                 break;
         }
     }
@@ -96,30 +100,53 @@ public class AdapterPengaturan extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     private class VHDirection extends RecyclerView.ViewHolder {
         private final FragmentPengaturanDirectionBinding binding;
+        public ListenerView.onClickViewHolder listenerViewHolder;
 
         public VHDirection(FragmentPengaturanDirectionBinding view) {
             super(view.getRoot());
             this.binding = view;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listenerViewHolder.onClickListener(v, getAdapterPosition());
+                }
+            });
         }
     }
 
     private class VHChangeColor extends RecyclerView.ViewHolder {
         FragmentPengaturanColorBinding binding;
+        ListenerView.onClickViewHolder listenerViewHolder;
 
         public VHChangeColor(FragmentPengaturanColorBinding view) {
             super(view.getRoot());
             this.binding = view;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listenerViewHolder.onClickListener(v, getAdapterPosition());
+                }
+            });
+
         }
-
-
     }
 
     private class VHSwitch extends RecyclerView.ViewHolder {
-        FragmentPengaturanChangeModeBinding binding;
+        public FragmentPengaturanChangeModeBinding binding;
+        public ListenerView.onCheckedViewHolder onClickViewHolder;
 
         public VHSwitch(FragmentPengaturanChangeModeBinding view) {
             super(view.getRoot());
             this.binding = view;
+
+            binding.changeMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    onClickViewHolder.onChangeViewHolder(buttonView, isChecked, getAdapterPosition());
+                }
+            });
         }
     }
 

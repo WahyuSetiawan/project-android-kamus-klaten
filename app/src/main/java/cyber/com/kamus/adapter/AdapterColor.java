@@ -10,11 +10,23 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import cyber.com.kamus.Preferences.PreferencesSetting;
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.ViewHolderColorBinding;
+import cyber.com.kamus.util.listener.ListenerView;
 
 public class AdapterColor extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<Integer> color = new ArrayList<>();
+
+    private ListenerView.onClickViewHolder listenerViewHolder;
+
+    public ListenerView.onClickViewHolder getListenerViewHolder() {
+        return listenerViewHolder;
+    }
+
+    public void setListenerViewHolder(ListenerView.onClickViewHolder listenerViewHolder) {
+        this.listenerViewHolder = listenerViewHolder;
+    }
 
     @NonNull
     @Override
@@ -27,9 +39,13 @@ public class AdapterColor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         VHColor vh = (VHColor) viewHolder;
 
-        vh.binding.background.setBackgroundColor(vh.itemView.getResources().getColor(this.color.get(i)));
+        vh.binding.background.setBackgroundColor(
+                vh.itemView.getResources().getColor(this.color.get(i))
+        );
+        vh.setListenerViewHolder(this.listenerViewHolder);
 
-        if (i == 1) {
+        Integer color = new PreferencesSetting(vh.itemView.getContext()).getColor();
+        if (vh.itemView.getResources().getColor(this.color.get(i)) == color) {
             vh.binding.check.setVisibility(View.VISIBLE);
         } else {
             vh.binding.check.setVisibility(View.GONE);
@@ -46,12 +62,28 @@ public class AdapterColor extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         return color.size();
     }
 
+    public Integer getItem(Integer position) {
+        return this.color.get(position);
+    }
+
+
     private class VHColor extends RecyclerView.ViewHolder {
         private final ViewHolderColorBinding binding;
+        ListenerView.onClickViewHolder listenerViewHolder;
 
         public VHColor(ViewHolderColorBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listenerViewHolder.onClickListener(v, getAdapterPosition());
+                }
+            });
+        }
+
+        public void setListenerViewHolder(ListenerView.onClickViewHolder listenerViewHolder) {
+            this.listenerViewHolder = listenerViewHolder;
         }
     }
 }
