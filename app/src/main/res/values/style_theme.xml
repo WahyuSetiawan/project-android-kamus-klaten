@@ -13,26 +13,135 @@
 
     <style name="AppTheme.noActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@android:color/white</item>
-        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorPrimary">@color/kamus_background_mode_default</item>
+        <item name="colorPrimaryDark">@color/kamus_background_mode_default</item>
         <item name="colorAccent">@color/kamus_orange</item>
         <item name="actionBarTheme">@style/ToolbarStyle</item>
+
+        <item name="colorBackground">@color/kamus_background_mode_default</item>
+        <item name="colorTextMode">@color/kamus_text_mode_default</item>
+        <item name="colorTabLayoutMode">@color/kamus_tab_layout_default_mode_default</item>
+        <item name="colorTitleMode">@color/kamus_title_mode_default</item>
+        <item name="colorContentMode">@color/kamus_content_mode_default</item>
+        <item name="colorToolbarMode">@color/kamus_toolbar_title_mode_default</item>
+        <item name="colorTextSearchMode">@color/kamus_text_search_mode_default</item>
+        <item name="colorTextBottomDefaultMode">@color/kamus_text_bottom_navigation_mode_default</item>
     </style>
 
-    <style name="AppTheme.noActionBar.7B1FA2" parent="AppTheme.noActionBar">
-        <item name="colorPrimary">@android:color/white</item>
-        <item name="colorPrimaryDark">@android:color/white</item>
+    <style name="AppTheme.noActionBar.theme_FF6F00" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_FF6F00</item>
+        <item name="colorAccentMode">@color/kamus_theme_FF6F00</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.theme_D32F2F" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_D32F2F</item>
+        <item name="colorAccentMode">@color/kamus_theme_D32F2F</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.theme_1976D2" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_1976D2</item>
+        <item name="colorAccentMode">@color/kamus_theme_1976D2</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.theme_00796B" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_00796B</item>
+        <item name="colorAccentMode">@color/kamus_theme_00796B</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.theme_388E3C" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_388E3C</item>
+        <item name="colorAccentMode">@color/kamus_theme_388E3C</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.theme_512DA8" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_512DA8</item>
+        <item name="colorAccentMode">@color/kamus_theme_512DA8</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.theme_7B1FA2" parent="AppTheme.noActionBar">
         <item name="colorAccent">@color/kamus_theme_7B1FA2</item>
+        <item name="colorAccentMode">@color/kamus_theme_7B1FA2</item>
     </style>
 
-    <style name="AppTheme.noActionBar.readMode" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/kamus_abu_abu_2</item>
-        <item name="android:background">@color/kamus_abu_abu_2</item>
-        <item name="colorPrimaryDark">@color/kamus_abu_abu_2</item>
+    <style name="AppTheme.noActionBar.theme_C2185B" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_C2185B</item>
+        <item name="colorAccentMode">@color/kamus_theme_C2185B</item>
     </style>
 
-    <style name="ToolbarStyle" parent="Widget.AppCompat.ActionBar">
-        <item name="android:textColorPrimary">@color/kamus_hitam</item>
+    <style name="AppTheme.noActionBar.theme_FBC02D" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_FBC02D</item>
+        <item name="colorAccentMode">@color/kamus_theme_FBC02D</item>
     </style>
+
+    <style name="AppTheme.noActionBar.theme_0097A7" parent="AppTheme.noActionBar">
+        <item name="colorAccent">@color/kamus_theme_0097A7</item>
+        <item name="colorAccentMode">@color/kamus_theme_0097A7</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode" parent="AppTheme.noActionBar">
+        <item name="colorPrimary">@color/kamus_background_mode_malam</item>
+        <item name="colorPrimaryDark">@color/kamus_background_mode_malam</item>
+
+        <item name="colorBackground">@color/kamus_background_mode_malam</item>
+        <item name="colorTextMode">@color/kamus_text_mode_malam</item>
+        <item name="colorTabLayoutMode">@color/kamus_tab_layout_default_mode_malam</item>
+        <item name="colorTitleMode">@color/kamus_title_mode_malam</item>
+        <item name="colorContentMode">@color/kamus_content_mode_malam</item>
+        <item name="colorToolbarMode">@color/kamus_toolbar_title_mode_malam</item>
+        <item name="colorTextSearchMode">@color/kamus_text_search_mode_malam</item>
+        <item name="colorTextBottomDefaultMode">@color/kamus_text_bottom_navigation_mode_malam</item>
+    </style>
+
+
+    <style name="AppTheme.noActionBar.readMode.theme_FF6F00" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_FF6F00</item>
+        <item name="colorAccentMode">@color/kamus_theme_FF6F00</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_D32F2F" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_D32F2F</item>
+        <item name="colorAccentMode">@color/kamus_theme_D32F2F</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_1976D2" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_1976D2</item>
+        <item name="colorAccentMode">@color/kamus_theme_1976D2</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_00796B" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_00796B</item>
+        <item name="colorAccentMode">@color/kamus_theme_00796B</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_388E3C" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_388E3C</item>
+        <item name="colorAccentMode">@color/kamus_theme_388E3C</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_512DA8" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_512DA8</item>
+        <item name="colorAccentMode">@color/kamus_theme_512DA8</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_7B1FA2" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_7B1FA2</item>
+        <item name="colorAccentMode">@color/kamus_theme_7B1FA2</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_C2185B" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_C2185B</item>
+        <item name="colorAccentMode">@color/kamus_theme_C2185B</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_FBC02D" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_FBC02D</item>
+        <item name="colorAccentMode">@color/kamus_theme_FBC02D</item>
+    </style>
+
+    <style name="AppTheme.noActionBar.readMode.theme_0097A7" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_theme_0097A7</item>
+        <item name="colorAccentMode">@color/kamus_theme_0097A7</item>
+    </style>
+
 
 </resources>

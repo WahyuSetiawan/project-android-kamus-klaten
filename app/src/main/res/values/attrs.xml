@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorAccentMode" format="color" />
+    <attr name="colorBackground" format="color" />
+    <attr name="colorTextMode" format="color" />
+    <attr name="colorTabLayoutMode" format="color" />
+    <attr name="colorTitleMode" format="color" />
+    <attr name="colorContentMode" format="color" />
+    <attr name="colorToolbarMode" format="color" />
+    <attr name="colorTextSearchMode" format="color" />
+    <attr name="colorTextBottomDefaultMode" format="color" />
+</resources>

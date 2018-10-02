@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="viewModel"
             type="cyber.com.kamus.view.viewmodel.ViewModelMainActivity" />
@@ -10,7 +11,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        style="@style/kamus.background">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/fragment"
@@ -26,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@android:color/white"
+            android:background="?attr/colorBackground"
             app:itemIconTint="@color/selector_bottom_navigation"
             app:itemTextColor="@color/selector_bottom_navigation"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -2,10 +2,14 @@ package cyber.com.kamus.view.fragment;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,18 +24,34 @@ import cyber.com.kamus.adapter.AdapterColor;
 import cyber.com.kamus.adapter.AdapterPengaturan;
 import cyber.com.kamus.databinding.FragmentPengaturanBinding;
 import cyber.com.kamus.model.Setting;
+import cyber.com.kamus.util.Helper;
 import cyber.com.kamus.util.listener.ListenerView;
 import cyber.com.kamus.util.listener.ListenerViewHolder;
 import cyber.com.kamus.view.BantuanActivity;
 import cyber.com.kamus.view.TentangActivity;
 
 public class FragmentSetting extends Fragment {
+    public static final String TAG = FragmentSetting.class.getSimpleName();
+
     private FragmentPengaturanBinding binding;
     private PreferencesSetting preferencesKamusSetting;
+
+    public static FragmentSetting fragmentSetting;
+
+    boolean loaded = false;
+
+    public static FragmentSetting init() {
+        if (fragmentSetting == null) {
+            fragmentSetting = new FragmentSetting();
+        }
+        return fragmentSetting;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loaded = false;
+
         preferencesKamusSetting = new PreferencesSetting(this.getContext());
     }
 
@@ -52,16 +72,17 @@ public class FragmentSetting extends Fragment {
 
         final AdapterColor adapterColor = new AdapterColor();
 
-        adapterColor.add(R.color.kamus_orange);
-        adapterColor.add(R.color.kamus_abu_abu);
-        adapterColor.add(R.color.kamus_dark);
-        adapterColor.add(R.color.kamus_hitam);
-        adapterColor.add(R.color.kamus_orange);
-        adapterColor.add(R.color.kamus_orange);
-        adapterColor.add(R.color.kamus_orange);
-        adapterColor.add(R.color.kamus_orange);
-        adapterColor.add(R.color.kamus_orange);
-        adapterColor.add(R.color.kamus_orange);
+        adapterColor.add(R.color.kamus_theme_FF6F00);
+        adapterColor.add(R.color.kamus_theme_D32F2F);
+        adapterColor.add(R.color.kamus_theme_1976D2);
+        adapterColor.add(R.color.kamus_theme_00796B);
+        adapterColor.add(R.color.kamus_theme_388E3C);
+        adapterColor.add(R.color.kamus_theme_512DA8);
+        adapterColor.add(R.color.kamus_theme_7B1FA2);
+        adapterColor.add(R.color.kamus_theme_C2185B);
+        adapterColor.add(R.color.kamus_theme_FBC02D);
+        adapterColor.add(R.color.kamus_theme_0097A7);
+
 
         final Setting warnaThema = new Setting("Warna Tema", FragmentPengaturan.TypePengaturan.color);
         warnaThema.setAdapter(adapterColor);
@@ -71,6 +92,9 @@ public class FragmentSetting extends Fragment {
             public void onClickListener(View view, Integer position) {
                 preferencesKamusSetting.setColor(getContext().getResources().getColor(adapterColor.getItem(position)));
                 adapterColor.notifyDataSetChanged();
+                if (loaded) {
+                    Helper.changeTheme(getActivity());
+                }
             }
         });
 
@@ -80,8 +104,10 @@ public class FragmentSetting extends Fragment {
             @Override
             public void onChangeViewHolder(CompoundButton compoundButton, boolean isChecked, Integer position) {
                 preferencesKamusSetting.setReadMode(isChecked);
-                Log.d(FragmentSetting.class.getSimpleName(), "" + isChecked);
-                Log.d(FragmentSetting.class.getSimpleName(), "onClickListener: " + preferencesKamusSetting.getReadMode());
+                if (loaded) {
+                    Helper.changeTheme(getActivity());
+                }
+
             }
         });
 
@@ -105,7 +131,19 @@ public class FragmentSetting extends Fragment {
             }
         });
 
+
+        loaded = true;
     }
 
+    @Override
+    public void onDestroy() {
+        Log.e(TAG, "onDestroy: ");
+        super.onDestroy();
+    }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString("a", "asdfasdfasd");
+        super.onSaveInstanceState(outState);
+    }
 }

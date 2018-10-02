@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.ActivityBantuanBinding;
+import cyber.com.kamus.util.Helper;
 
 public class BantuanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Helper.chooseTheme(this);
+
         ActivityBantuanBinding activityBantuanBinding = DataBindingUtil.setContentView(this, R.layout.activity_bantuan);
 
         setSupportActionBar(activityBantuanBinding.toolbar);

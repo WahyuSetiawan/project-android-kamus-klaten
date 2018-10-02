@@ -68,11 +68,13 @@ public class AdapterPengaturan extends RecyclerView.Adapter<RecyclerView.ViewHol
             case changemode:
                 VHSwitch vh2 = (VHSwitch) viewHolder;
                 vh2.binding.title.setText(this.pengaturans.get(i).getName());
-                vh2.onClickViewHolder = pengaturans.get(i).getOnCheckedViewHolder();
 
                 vh2.binding.changeMode.setChecked(
                         new PreferencesSetting(vh2.itemView.getContext()).getReadMode()
                 );
+
+                vh2.onClickViewHolder = pengaturans.get(i).getOnCheckedViewHolder();
+
 
                 break;
             case direction:
@@ -144,7 +146,8 @@ public class AdapterPengaturan extends RecyclerView.Adapter<RecyclerView.ViewHol
             binding.changeMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    onClickViewHolder.onChangeViewHolder(buttonView, isChecked, getAdapterPosition());
+                    if (onClickViewHolder != null)
+                        onClickViewHolder.onChangeViewHolder(buttonView, isChecked, getAdapterPosition());
                 }
             });
         }

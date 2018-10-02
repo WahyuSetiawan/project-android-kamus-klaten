@@ -22,4 +22,27 @@
     <color name="kamus_theme_FBC02D">#FBC02D</color>
     <color name="kamus_theme_0097A7">#0097A7</color>
 
+    <color name="kamus_background_mode_malam">#15202B</color>
+    <color name="kamus_background_mode_default">#FFFFFF</color>
+
+    <color name="kamus_text_mode_malam">#FBFBFB</color>
+    <color name="kamus_text_mode_default">#212121</color>
+
+    <color name="kamus_tab_layout_default_mode_malam">#798A97</color>
+    <color name="kamus_tab_layout_default_mode_default">#616161</color>
+
+    <color name="kamus_title_mode_default">#212121</color>
+    <color name="kamus_title_mode_malam">#FBFBFB</color>
+
+    <color name="kamus_content_mode_default">#707070</color>
+    <color name="kamus_content_mode_malam">#8697A4</color>
+
+    <color name="kamus_toolbar_title_mode_default">#616161</color>
+    <color name="kamus_toolbar_title_mode_malam">#8697A4</color>
+
+    <color name="kamus_text_search_mode_malam">#798A97</color>
+    <color name="kamus_text_search_mode_default">#616161</color>
+
+    <color name="kamus_text_bottom_navigation_mode_malam">#798A97</color>
+    <color name="kamus_text_bottom_navigation_mode_default">#616161</color>
 </resources>

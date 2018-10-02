@@ -2,6 +2,9 @@ package cyber.com.kamus.Preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+
+import cyber.com.kamus.R;
 
 public class PreferencesSetting {
     private final String PREVERENCES_KAMUS = "PREFERENCES_KAMUS";
@@ -10,14 +13,16 @@ public class PreferencesSetting {
 
     public static final String PREF_COLOR = "PREF_COLOR";
     public static final String PREF_READMODE = "PREF_READMODE";
+    private final Context context;
 
     public PreferencesSetting(Context context) {
+        this.context = context;
         this.sharedPreferences = context.getSharedPreferences(PREVERENCES_KAMUS, Context.MODE_PRIVATE);
         this.sharedPreferencesEditor = this.sharedPreferences.edit();
     }
 
     public Integer getColor() {
-        return this.sharedPreferences.getInt(PREF_COLOR, 0);
+        return this.sharedPreferences.getInt(PREF_COLOR, context.getResources().getColor(R.color.kamus_theme_FF6F00));
     }
 
     public void setColor(Integer color) {

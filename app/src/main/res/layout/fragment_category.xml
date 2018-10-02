@@ -6,8 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView style="@style/kamus.string.toolbar"
+        <TextView
             android:id="@+id/title"
+            style="@style/kamus.string.toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"

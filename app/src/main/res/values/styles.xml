@@ -1,26 +1,64 @@
 <resources>
+
     <style name="kamus" />
 
     <style name="kamus.string" />
 
-    <style name="kamus.string.toolbar">
-        <item name="android:textColor">@color/kamus_abu_abu</item>
-        <item name="android:textSize">20dp</item>
+    <style name="kamus.background">
+        <item name="android:background">?attr/colorBackground</item>
     </style>
 
-    <style name="kamus.string.subtitle">
-        <item name="android:textColor">@color/kamus_hitam</item>
-        <item name="android:textSize">16dp</item>
+    <style name="kamus.string.toolbar" parent="roboto.medium">
+        <item name="android:textColor">?attr/colorToolbarMode</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="kamus.string.title">
-        <item name="android:textColor">@color/kamus_hitam</item>
-        <item name="android:textSize">18dp</item>
+    <style name="kamus.string.subtitle" parent="opensans.semibolditalic">
+        <item name="android:textColor">?attr/colorContentMode</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="kamus.string.pengaturantitle">
-        <item name="android:textColor">@color/kamus_hitam</item>
-        <item name="android:textSize">16dp</item>
+    <style name="kamus.string.title" parent="roboto.medium">
+        <item name="android:textColor">?attr/colorTitleMode</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="kamus.string.pengaturantitle" parent="seguisb">
+        <item name="android:textColor">?attr/colorTextMode</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="kamus.string.content" parent="seguisb">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorContentMode</item>
+    </style>
+
+
+    <style name="kamus.string.search" parent="roboto">
+        <item name="android:textColor">?attr/colorTextSearchMode</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableRight">@drawable/ic_search_black_24dp</item>
+        <item name="android:hint">Masukan Kata Disini</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">?attr/colorTextSearchMode</item>
+    </style>
+
+
+    <style name="kamus.tab" parent="Base.Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/kamus.tab.text</item>
+        <item name="tabSelectedTextColor">?attr/colorAccentMode</item>
+        <item name="tabTextColor">?attr/colorTabLayoutMode</item>
+        <item name="tabPaddingTop">-1dp</item>
+        <item name="tabPaddingBottom">-1dp</item>
+    </style>
+
+    <style name="kamus.tab.text" parent="roboto">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">?attr/colorToolbarMode</item>
     </style>
 
 </resources>

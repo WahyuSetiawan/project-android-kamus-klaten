@@ -1,5 +1,6 @@
 package cyber.com.kamus.adapter;
 
+import android.content.res.TypedArray;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import cyber.com.kamus.Preferences.AttrHelper;
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.ViewHolderKuisBinding;
 import cyber.com.kamus.model.Kuis;
@@ -31,7 +33,7 @@ public class AdapterKuis extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         VHKuis vh = (VHKuis) viewHolder;
 
         if (this.kuis.get(i).isStatus()) {
-            vh.binding.background.setBackgroundColor(viewHolder.itemView.getResources().getColor(R.color.kamus_orange));
+            vh.binding.background.setBackgroundColor(new AttrHelper(vh.itemView.getContext()).getColorAccent());
             Glide.with(viewHolder.itemView).load(R.drawable.ic_lock_open_black_24dp).into(vh.binding.icon);
         } else {
             vh.binding.background.setBackgroundColor(viewHolder.itemView.getResources().getColor(R.color.kamus_dark));

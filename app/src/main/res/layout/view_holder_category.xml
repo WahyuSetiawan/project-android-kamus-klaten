@@ -15,7 +15,7 @@
             app:cardUseCompatPadding="true">
 
             <android.support.constraint.ConstraintLayout
-                android:background="@color/kamus_orange"
+                android:background="?attr/colorAccentMode"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
