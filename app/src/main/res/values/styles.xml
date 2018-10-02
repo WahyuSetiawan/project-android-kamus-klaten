@@ -3,13 +3,42 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/kamus_orange</item>
+        <item name="colorPrimaryDark">@color/kamus_orange</item>
+        <item name="colorAccent">@color/kamus_orange</item>
     </style>
 
     <style name="AppTheme.noActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/kamus_orange</item>
+        <item name="colorPrimaryDark">@color/kamus_orange</item>
+        <item name="colorAccent">@color/kamus_orange</item>
+    </style>
 
+    <style name="AppTheme.noActionBar.readmode" parent="Theme.AppCompat.DayNight.DarkActionBar">
+
+    </style>
+
+    <style name="kamus"/>
+    <style name="kamus.string"/>
+    <style name="kamus.string.toolbar">
+        <item name="android:textColor">@color/kamus_abu_abu</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="kamus.string.subtitle">
+        <item name="android:textColor">@color/kamus_hitam</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="kamus.string.title">
+        <item name="android:textColor">@color/kamus_hitam</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+    
+    <style name="kamus.string.pengaturantitle">
+        <item name="android:textColor">@color/kamus_hitam</item>
+        <item name="android:textSize">16dp</item>
     </style>
 
 </resources>

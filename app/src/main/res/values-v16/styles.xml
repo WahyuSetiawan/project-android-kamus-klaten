@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="kamus.string.toolbar">
+        <item name="android:textColor">@color/kamus_abu_abu</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="kamus.string.subtitle">
+        <item name="android:textColor">@color/kamus_hitam</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/opensans_semibolditalic</item>
+    </style>
+
+    <style name="kamus.string.title">
+        <item name="android:textColor">@color/kamus_hitam</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="kamus.string.pengaturantitle">
+        <item name="android:textColor">@color/kamus_hitam</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/seguisb</item>
+    </style>
+</resources>

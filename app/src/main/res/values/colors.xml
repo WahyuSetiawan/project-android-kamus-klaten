@@ -6,4 +6,8 @@
 
     <color name="kamus_orange">#FF6F00</color>
     <color name="kamus_abu_abu">#616161</color>
+    <color name="kamus_abu_abu_2">#757575</color>
+    <color name="kamus_dark">#37474F</color>
+
+    <color name="kamus_hitam">#212121</color>
 </resources>

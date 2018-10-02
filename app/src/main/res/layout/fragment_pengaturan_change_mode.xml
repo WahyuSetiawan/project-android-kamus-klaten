@@ -4,30 +4,24 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:minHeight="55dp">
 
-        <TextView style="@style/kamus.string.toolbar"
+        <TextView
             android:id="@+id/title"
+            style="@style/kamus.string.pengaturantitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
             android:layout_marginTop="16dp"
-            android:layout_marginRight="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_width="match_parent"
+        <Switch
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="30dp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/title"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title" />
-
+            app:layout_constraintTop_toTopOf="@id/title" />
     </android.support.constraint.ConstraintLayout>
 
 </layout>

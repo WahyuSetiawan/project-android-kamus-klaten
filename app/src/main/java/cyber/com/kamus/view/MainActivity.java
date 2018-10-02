@@ -5,15 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
-
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.ActivityNavigationBinding;
 import cyber.com.kamus.view.fragment.FragmentCategory;
 import cyber.com.kamus.view.fragment.FragmentKuis;
 import cyber.com.kamus.view.fragment.FragmentSearch;
 import cyber.com.kamus.view.fragment.FragmentSetting;
-import cyber.com.kamus.view.util.Helper;
+import cyber.com.kamus.util.Helper;
 import cyber.com.kamus.view.viewmodel.ViewModelMainActivity;
 
 public class MainActivity extends AppCompatActivity implements ViewModelMainActivity.Action {
@@ -26,13 +24,12 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
         binding = DataBindingUtil.setContentView(this, R.layout.activity_navigation);
         binding.setViewModel(new ViewModelMainActivity(this));
 
-
         binding.bottomNavigation.enableAnimation(false);
         binding.bottomNavigation.enableShiftingMode(false);
 
-
         Helper.openFragment(this, new FragmentSearch(), R.id.fragment);
     }
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
