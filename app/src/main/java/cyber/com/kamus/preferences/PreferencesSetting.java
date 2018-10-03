@@ -1,8 +1,7 @@
-package cyber.com.kamus.Preferences;
+package cyber.com.kamus.preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 
 import cyber.com.kamus.R;
 

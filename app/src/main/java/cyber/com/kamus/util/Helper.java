@@ -3,14 +3,12 @@ package cyber.com.kamus.util;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
-import cyber.com.kamus.Preferences.PreferencesSetting;
+import cyber.com.kamus.preferences.PreferencesSetting;
 
 public class Helper {
     public static final String TAG = Helper.class.getSimpleName();
@@ -29,7 +27,7 @@ public class Helper {
         String color = Integer.toHexString(preferencesSetting.getColor()).substring(2).toUpperCase();
 
         if (preferencesSetting.getReadMode()) {
-            theme = "AppTheme.noActionBar.readMode.theme_" + color;
+            theme = "AppTheme.noActionBar.readMode.theme_1DA1F2";
         } else {
             theme = "AppTheme.noActionBar.theme_" + color;
         }

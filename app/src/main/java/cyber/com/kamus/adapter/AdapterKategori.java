@@ -3,11 +3,13 @@ package cyber.com.kamus.adapter;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -31,8 +33,23 @@ public class AdapterKategori extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         VHKategory vhKategory = (VHKategory) viewHolder;
 
+        Log.e(AdapterKategori.class.getSimpleName(), "onBindViewHolder: " + this.kategoris.get(i).getDrawable());
+
+//        Picasso.get().load(
+//                vhKategory.itemView.getResources().getIdentifier(
+//                        "icon_hewan", "drawable",
+//                        vhKategory.itemView.getContext().getPackageName()
+//                )
+//        ).into(vhKategory.viewHolderCategoryBinding.icon);
+
+
         Glide.with(viewHolder.itemView)
-                .load(this.kategoris.get(i).getDrawable())
+                .load(vhKategory.itemView.getResources()
+                        .getIdentifier(
+                                this.kategoris.get(i).getDrawable().trim(), "drawable",
+                                vhKategory.itemView.getContext().getPackageName()
+                        )
+                )
                 .into(vhKategory.viewHolderCategoryBinding.icon);
 
         vhKategory.viewHolderCategoryBinding

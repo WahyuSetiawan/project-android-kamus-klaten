@@ -1,0 +1,8 @@
+Anak Ampal, Embug, hewan
+Anak Anjing, Kirik, hewan
+Anak Babi, gambluk, hewan
+Anak Ikan Bandeng, Nener ,hewan
+Anak Bantheng, Warek, hewan
+bakso, bakso, keluarga
+balik, walik, keluarga
+catetan, cathetan, keluarga

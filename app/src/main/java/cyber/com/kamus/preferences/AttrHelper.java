@@ -1,11 +1,9 @@
-package cyber.com.kamus.Preferences;
+package cyber.com.kamus.preferences;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-
-import java.util.Arrays;
 
 import cyber.com.kamus.R;
 

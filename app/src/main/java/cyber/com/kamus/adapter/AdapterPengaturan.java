@@ -4,7 +4,6 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,7 @@ import android.widget.CompoundButton;
 
 import java.util.ArrayList;
 
-import cyber.com.kamus.Preferences.PreferencesSetting;
+import cyber.com.kamus.preferences.PreferencesSetting;
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.FragmentPengaturanChangeModeBinding;
 import cyber.com.kamus.databinding.FragmentPengaturanColorBinding;
@@ -20,7 +19,6 @@ import cyber.com.kamus.databinding.FragmentPengaturanDirectionBinding;
 import cyber.com.kamus.model.Setting;
 import cyber.com.kamus.util.decoration.GridItemDecoration;
 import cyber.com.kamus.util.listener.ListenerView;
-import cyber.com.kamus.util.listener.ListenerViewHolder;
 import cyber.com.kamus.view.fragment.FragmentPengaturan;
 
 public class AdapterPengaturan extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

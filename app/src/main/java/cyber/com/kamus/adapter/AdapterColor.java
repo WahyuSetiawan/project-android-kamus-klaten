@@ -1,7 +1,6 @@
 package cyber.com.kamus.adapter;
 
 import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,7 +9,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import cyber.com.kamus.Preferences.PreferencesSetting;
+import cyber.com.kamus.preferences.PreferencesSetting;
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.ViewHolderColorBinding;
 import cyber.com.kamus.util.listener.ListenerView;

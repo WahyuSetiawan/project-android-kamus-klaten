@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import cyber.com.kamus.R;
+import cyber.com.kamus.database.Database;
 import cyber.com.kamus.databinding.ActivityNavigationBinding;
 import cyber.com.kamus.view.fragment.FragmentCategory;
 import cyber.com.kamus.view.fragment.FragmentKuis;
@@ -26,12 +27,17 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
     private FragmentKuis fragmentKuis;
     private FragmentSetting fragmentSetting;
 
+    Database database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Helper.chooseTheme(this);
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_navigation);
         binding.setViewModel(new ViewModelMainActivity(this));
+
+        database = new Database(this);
+
 
         binding.bottomNavigation.enableAnimation(false);
         binding.bottomNavigation.enableShiftingMode(false);
@@ -66,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
 
             if (savedInstanceState.getString(FRAGMENT)
                     .equals(FragmentSetting.class.getSimpleName())) {
-                Helper.openFragment(this,  FragmentSetting.init(), R.id.fragment);
+                Helper.openFragment(this, FragmentSetting.init(), R.id.fragment);
                 classFragment = FragmentSetting.class.getSimpleName();
             }
         } else {

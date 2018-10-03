@@ -92,55 +92,9 @@
         <item name="colorTextBottomDefaultMode">@color/kamus_text_bottom_navigation_mode_malam</item>
     </style>
 
-
-    <style name="AppTheme.noActionBar.readMode.theme_FF6F00" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_FF6F00</item>
-        <item name="colorAccentMode">@color/kamus_theme_FF6F00</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_D32F2F" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_D32F2F</item>
-        <item name="colorAccentMode">@color/kamus_theme_D32F2F</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_1976D2" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_1976D2</item>
-        <item name="colorAccentMode">@color/kamus_theme_1976D2</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_00796B" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_00796B</item>
-        <item name="colorAccentMode">@color/kamus_theme_00796B</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_388E3C" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_388E3C</item>
-        <item name="colorAccentMode">@color/kamus_theme_388E3C</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_512DA8" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_512DA8</item>
-        <item name="colorAccentMode">@color/kamus_theme_512DA8</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_7B1FA2" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_7B1FA2</item>
-        <item name="colorAccentMode">@color/kamus_theme_7B1FA2</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_C2185B" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_C2185B</item>
-        <item name="colorAccentMode">@color/kamus_theme_C2185B</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_FBC02D" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_FBC02D</item>
-        <item name="colorAccentMode">@color/kamus_theme_FBC02D</item>
-    </style>
-
-    <style name="AppTheme.noActionBar.readMode.theme_0097A7" parent="AppTheme.noActionBar.readMode">
-        <item name="colorAccent">@color/kamus_theme_0097A7</item>
-        <item name="colorAccentMode">@color/kamus_theme_0097A7</item>
+    <style name="AppTheme.noActionBar.readMode.theme_1DA1F2" parent="AppTheme.noActionBar.readMode">
+        <item name="colorAccent">@color/kamus_accent_mode_malam_1DA1F2</item>
+        <item name="colorAccentMode">@color/kamus_accent_mode_malam_1DA1F2</item>
     </style>
 
 

@@ -22,6 +22,8 @@
     <color name="kamus_theme_FBC02D">#FBC02D</color>
     <color name="kamus_theme_0097A7">#0097A7</color>
 
+    <color name="kamus_theme_8697A4">#8697A4</color>
+
     <color name="kamus_background_mode_malam">#15202B</color>
     <color name="kamus_background_mode_default">#FFFFFF</color>
 
@@ -45,4 +47,6 @@
 
     <color name="kamus_text_bottom_navigation_mode_malam">#798A97</color>
     <color name="kamus_text_bottom_navigation_mode_default">#616161</color>
+
+    <color name="kamus_accent_mode_malam_1DA1F2">#1DA1F2</color>
 </resources>
