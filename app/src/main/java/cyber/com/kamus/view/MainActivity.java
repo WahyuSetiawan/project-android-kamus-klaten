@@ -6,10 +6,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import cyber.com.kamus.R;
-import cyber.com.kamus.database.Database;
 import cyber.com.kamus.databinding.ActivityNavigationBinding;
 import cyber.com.kamus.view.fragment.FragmentCategory;
-import cyber.com.kamus.view.fragment.FragmentKuis;
+import cyber.com.kamus.view.fragment.FragmentDaftarKuis;
 import cyber.com.kamus.view.fragment.FragmentSearch;
 import cyber.com.kamus.view.fragment.FragmentSetting;
 import cyber.com.kamus.util.Helper;
@@ -22,8 +21,10 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Helper.chooseTheme(this);
         super.onCreate(savedInstanceState);
+
+        Helper.chooseTheme(this);
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_navigation);
         binding.setViewModel(new ViewModelMainActivity(this));
 
@@ -44,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
             }
 
             if (savedInstanceState.getString(FRAGMENT)
-                    .equals(FragmentKuis.class.getSimpleName())) {
-                Helper.openFragment(this, FragmentKuis.init(), R.id.fragment);
-                classFragment = FragmentKuis.class.getSimpleName();
+                    .equals(FragmentDaftarKuis.class.getSimpleName())) {
+                Helper.openFragment(this, FragmentDaftarKuis.init(), R.id.fragment);
+                classFragment = FragmentDaftarKuis.class.getSimpleName();
             }
 
             if (savedInstanceState.getString(FRAGMENT)
@@ -72,14 +73,13 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
                 classFragment = FragmentCategory.class.getSimpleName();
                 break;
             case R.id.menu_kuis_seru:
-                Helper.openFragment(this, FragmentKuis.init(), R.id.fragment);
-                classFragment = FragmentKuis.class.getSimpleName();
+                Helper.openFragment(this, FragmentDaftarKuis.init(), R.id.fragment);
+                classFragment = FragmentDaftarKuis.class.getSimpleName();
                 break;
             case R.id.menu_pengaturan:
                 Helper.openFragment(this, FragmentSetting.init(), R.id.fragment);
                 classFragment = FragmentSetting.class.getSimpleName();
                 break;
-
         }
         return true;
     }

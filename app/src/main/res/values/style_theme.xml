@@ -26,6 +26,8 @@
         <item name="colorToolbarMode">@color/kamus_toolbar_title_mode_default</item>
         <item name="colorTextSearchMode">@color/kamus_text_search_mode_default</item>
         <item name="colorTextBottomDefaultMode">@color/kamus_text_bottom_navigation_mode_default</item>
+
+        <item name="colorBackgroundKuis">@color/kamus_background_kuis_mode_default</item>
     </style>
 
     <style name="AppTheme.noActionBar.theme_FF6F00" parent="AppTheme.noActionBar">
@@ -90,12 +92,13 @@
         <item name="colorToolbarMode">@color/kamus_toolbar_title_mode_malam</item>
         <item name="colorTextSearchMode">@color/kamus_text_search_mode_malam</item>
         <item name="colorTextBottomDefaultMode">@color/kamus_text_bottom_navigation_mode_malam</item>
+
+        <item name="colorBackgroundKuis">@color/kamus_background_kuis_mode_malam</item>
     </style>
 
     <style name="AppTheme.noActionBar.readMode.theme_1DA1F2" parent="AppTheme.noActionBar.readMode">
         <item name="colorAccent">@color/kamus_accent_mode_malam_1DA1F2</item>
         <item name="colorAccentMode">@color/kamus_accent_mode_malam_1DA1F2</item>
     </style>
-
 
 </resources>

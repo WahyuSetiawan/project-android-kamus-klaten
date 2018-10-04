@@ -49,4 +49,11 @@
     <color name="kamus_text_bottom_navigation_mode_default">#616161</color>
 
     <color name="kamus_accent_mode_malam_1DA1F2">#1DA1F2</color>
+
+    <color name="kamus_background_kuis_mode_default">#F5F5F5</color>
+    <color name="kamus_background_kuis_mode_malam">#15202B</color>
+
+    <color name="kamus_text_kuis_title_mode_malam">#8697A4</color>
+    <color name="kamus_text_kuis_title_mode_default">#616161</color>
+
 </resources>

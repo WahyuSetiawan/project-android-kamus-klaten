@@ -9,4 +9,5 @@
     <attr name="colorToolbarMode" format="color" />
     <attr name="colorTextSearchMode" format="color" />
     <attr name="colorTextBottomDefaultMode" format="color" />
+    <attr name="colorBackgroundKuis" format="color" />
 </resources>
