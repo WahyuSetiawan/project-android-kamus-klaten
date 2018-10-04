@@ -1,5 +1,7 @@
 package cyber.com.kamus.model;
 
+import java.util.logging.Filter;
+
 import cyber.com.kamus.adapter.AdapterSearch;
 
 public class SearchResult {
@@ -46,4 +48,5 @@ public class SearchResult {
     public void setKamus(Kamus kamus) {
         this.kamus = kamus;
     }
+
 }

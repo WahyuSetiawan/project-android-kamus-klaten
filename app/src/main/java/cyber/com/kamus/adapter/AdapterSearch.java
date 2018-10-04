@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 import java.util.ArrayList;
 
@@ -15,8 +17,9 @@ import cyber.com.kamus.databinding.ViewHolderContentBinding;
 import cyber.com.kamus.databinding.ViewHolderSectionBinding;
 import cyber.com.kamus.model.SearchResult;
 
-public class AdapterSearch extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class AdapterSearch extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements Filterable {
     ArrayList<SearchResult> searchResults = new ArrayList<>();
+    ArrayList<SearchResult> searchResultsFiltered = new ArrayList<>();
 
     @NonNull
     @Override
@@ -70,6 +73,33 @@ public class AdapterSearch extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void setSearchResults(ArrayList<SearchResult> searchResults) {
         this.searchResults = searchResults;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String charString = constraint.toString();
+
+                if (charString.isEmpty()){
+                    searchResultsFiltered = searchResults;
+                }else{
+                    ArrayList<SearchResult> results = new ArrayList<>();
+
+                    for (SearchResult searchResult: searchResults) {
+
+                    }
+
+                }
+                return null;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+            }
+        };
     }
 
     public enum TypeLayout {
