@@ -18,6 +18,7 @@
         <item name="colorAccent">@color/kamus_orange</item>
         <item name="actionBarTheme">@style/ToolbarStyle</item>
 
+        //setting variable home
         <item name="colorHomeBackground">@color/kamus_background_mode_default</item>
         <item name="colorHomeTextMode">@color/kamus_text_mode_default</item>
         <item name="colorHomeTabLayoutMode">@color/kamus_tab_layout_default_mode_default</item>
@@ -25,9 +26,27 @@
         <item name="colorHomeContentMode">@color/kamus_content_mode_default</item>
         <item name="colorHomeToolbarMode">@color/kamus_toolbar_title_mode_default</item>
         <item name="colorHomeTextSearchMode">@color/kamus_text_search_mode_default</item>
-        <item name="colorHomeTextBottomDefaultMode">@color/kamus_text_bottom_navigation_mode_default</item>
+        <item name="colorHomeTextBottomDefaultMode">
+            @color/kamus_text_bottom_navigation_mode_default
+        </item>
 
+        //setting variable kuis
         <item name="colorKuisBackground">@color/kamus_background_kuis_mode_default</item>
+        <item name="colorKuisTextTitle">@color/kamus_kuis_title_mode_default</item>
+        <item name="colorKuisTextVariable">@color/kamus_kuis_text_variable_mode_default</item>
+        <item name="colorKuisTextQuestion">@color/kamus_kuis_text_question_mode_default</item>
+        <item name="colorKuisBackgroundQuestion">@color/kamus_kuis_backgroud_question_mode_default
+        </item>
+        <item name="colorKuisButtonAnswer">@color/kamus_kuis_button_mode_default</item>
+        <item name="colorKuisButtonAnswerTrue">@color/kamus_kuis_button_mode_true_default</item>
+        <item name="colorKuisButtonAnswerFalse">@color/kamus_kuis_button_mode_false_default</item>
+
+        <item name="colorKuisButtonTextAnswer">@color/kamus_kuis_text_button_mode_default</item>
+        <item name="colorKuisButtonTextAnswerTrue">@color/kamus_kuis_text_button_true_mode_default
+        </item>
+        <item name="colorKuisButtonTextAnswerFalse">
+            @color/kamus_kuis_text_button_false_mode_default
+        </item>
     </style>
 
     <style name="AppTheme.noActionBar.theme_FF6F00" parent="AppTheme.noActionBar">
@@ -91,9 +110,26 @@
         <item name="colorHomeContentMode">@color/kamus_content_mode_malam</item>
         <item name="colorHomeToolbarMode">@color/kamus_toolbar_title_mode_malam</item>
         <item name="colorHomeTextSearchMode">@color/kamus_text_search_mode_malam</item>
-        <item name="colorHomeTextBottomDefaultMode">@color/kamus_text_bottom_navigation_mode_malam</item>
+        <item name="colorHomeTextBottomDefaultMode">@color/kamus_text_bottom_navigation_mode_malam
+        </item>
 
+        //setting variable kuis
         <item name="colorKuisBackground">@color/kamus_background_kuis_mode_malam</item>
+        <item name="colorKuisTextTitle">@color/kamus_kuis_title_mode_malam</item>
+        <item name="colorKuisTextVariable">@color/kamus_kuis_text_variable_mode_malam</item>
+        <item name="colorKuisTextQuestion">@color/kamus_kuis_text_question_mode_malam</item>
+        <item name="colorKuisBackgroundQuestion">@color/kamus_kuis_backgroud_question_mode_malam
+        </item>
+        <item name="colorKuisButtonAnswer">@color/kamus_kuis_button_mode_malam</item>
+        <item name="colorKuisButtonAnswerTrue">@color/kamus_kuis_button_mode_true_malam</item>
+        <item name="colorKuisButtonAnswerFalse">@color/kamus_kuis_button_mode_false_malam</item>
+
+        <item name="colorKuisButtonTextAnswer">@color/kamus_kuis_text_button_mode_malam</item>
+        <item name="colorKuisButtonTextAnswerTrue">@color/kamus_kuis_text_button_true_mode_malam
+        </item>
+        <item name="colorKuisButtonTextAnswerFalse">
+            @color/kamus_kuis_text_button_false_mode_malam
+        </item>
     </style>
 
     <style name="AppTheme.noActionBar.readMode.theme_1DA1F2" parent="AppTheme.noActionBar.readMode">

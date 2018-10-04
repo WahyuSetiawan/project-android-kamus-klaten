@@ -21,6 +21,9 @@
     <attr name="colorKuisButtonAnswer" format="color" />
     <attr name="colorKuisButtonAnswerTrue" format="color" />
     <attr name="colorKuisButtonAnswerFalse" format="color" />
+    <attr name="colorKuisButtonTextAnswer" format="color" />
+    <attr name="colorKuisButtonTextAnswerTrue" format="color" />
+    <attr name="colorKuisButtonTextAnswerFalse" format="color" />
     <attr name="colorKuisTextTitle" format="color" />
 
     //variable

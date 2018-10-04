@@ -5,9 +5,9 @@ import java.util.logging.Filter;
 import cyber.com.kamus.adapter.AdapterSearch;
 
 public class SearchResult {
-    String title;
-    AdapterSearch.TypeLayout typeLayout;
-    Kamus kamus;
+    private String title;
+    private AdapterSearch.TypeLayout typeLayout;
+    private Kamus kamus;
 
     public SearchResult(String title) {
         this.title = title;

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="kamus" />
 
@@ -34,35 +34,51 @@
 
     </style>
 
-    <style name="kamus.kuis.text.question">
-
+    <style name="kamus.kuis.text.question" parent="seguisb">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">?attr/colorKuisTextQuestion</item>
     </style>
 
-    <style name="kamus.kuis.text.variable">
-
+    <style name="kamus.kuis.text.variable" parent="roboto.medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorKuisTextVariable</item>
     </style>
 
     <style name="kamus.background.kuis.question">
-
+        <item name="android:background">?attr/colorKuisBackgroundQuestion</item>
     </style>
 
-    <style name="kamus.kuis.text.title"></style>
+    <style name="kamus.kuis.text.title" parent="roboto.medium">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">?attr/colorKuisTextTitle</item>
+    </style>
 
 
     <style name="kamus.kuis.button" />
 
     <style name="kamus.kuis.button.answer" />
 
-    <style name="kamus.kuis.button.answer.default" parent="Base.Widget.AppCompat.Button">
-
+    <style name="kamus.kuis.button.answer.default">
+        <item name="android:textColor">?attr/colorKuisButtonTextAnswer</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/seguisb</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:background">@drawable/button_rounded</item>
+        <item name="android:backgroundTint" tools:targetApi="lollipop">?attr/colorKuisButtonAnswer
+        </item>
     </style>
 
     <style name="kamus.kuis.button.answer.true" parent="kamus.kuis.button.answer.default">
-
+        <item name="android:backgroundTint" tools:targetApi="lollipop">
+            ?attr/colorKuisButtonAnswerTrue
+        </item>
     </style>
 
     <style name="kamus.kuis.button.answer.false" parent="kamus.kuis.button.answer.default">
-
+        <item name="android:backgroundTint" tools:targetApi="lollipop">
+            ?attr/colorKuisButtonAnswerFalse
+        </item>
     </style>
 
     <style name="kamus.string.toolbar" parent="roboto.medium">
