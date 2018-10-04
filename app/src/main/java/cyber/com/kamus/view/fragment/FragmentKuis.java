@@ -20,6 +20,13 @@ import cyber.com.kamus.util.decoration.GridItemDecoration;
 public class FragmentKuis extends Fragment {
     FragmentKuisBinding binding;
 
+    public static FragmentKuis init() {
+        FragmentKuis fragmentKuis = new FragmentKuis();
+        Bundle bundle = new Bundle();
+        fragmentKuis.setArguments(bundle);
+        return fragmentKuis;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

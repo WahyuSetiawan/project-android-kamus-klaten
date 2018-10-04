@@ -17,17 +17,8 @@ import cyber.com.kamus.view.viewmodel.ViewModelMainActivity;
 
 public class MainActivity extends AppCompatActivity implements ViewModelMainActivity.Action {
     private ActivityNavigationBinding binding;
-
     private String classFragment;
-
-    public static final String FRAGMENT = "FRAGMENT";
-
-    private FragmentSearch fragmentSearch;
-    private FragmentCategory fragmentCategory;
-    private FragmentKuis fragmentKuis;
-    private FragmentSetting fragmentSetting;
-
-    Database database;
+    private static final String FRAGMENT = "FRAGMENT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,37 +27,25 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
         binding = DataBindingUtil.setContentView(this, R.layout.activity_navigation);
         binding.setViewModel(new ViewModelMainActivity(this));
 
-        database = new Database(this);
-
-
         binding.bottomNavigation.enableAnimation(false);
         binding.bottomNavigation.enableShiftingMode(false);
 
         if (savedInstanceState != null) {
             if (savedInstanceState.getString(FRAGMENT)
                     .equals(FragmentSearch.class.getSimpleName())) {
-                if (fragmentSearch == null) {
-                    fragmentSearch = new FragmentSearch();
-                }
-                Helper.openFragment(this, fragmentSearch, R.id.fragment);
+                Helper.openFragment(this, FragmentSearch.init(), R.id.fragment);
                 classFragment = FragmentSearch.class.getSimpleName();
             }
 
             if (savedInstanceState.getString(FRAGMENT)
                     .equals(FragmentCategory.class.getSimpleName())) {
-                if (fragmentCategory == null) {
-                    fragmentCategory = new FragmentCategory();
-                }
-                Helper.openFragment(this, fragmentCategory, R.id.fragment);
+                Helper.openFragment(this, FragmentCategory.init(), R.id.fragment);
                 classFragment = FragmentCategory.class.getSimpleName();
             }
 
             if (savedInstanceState.getString(FRAGMENT)
                     .equals(FragmentKuis.class.getSimpleName())) {
-                if (fragmentKuis == null) {
-                    fragmentKuis = new FragmentKuis();
-                }
-                Helper.openFragment(this, fragmentKuis, R.id.fragment);
+                Helper.openFragment(this, FragmentKuis.init(), R.id.fragment);
                 classFragment = FragmentKuis.class.getSimpleName();
             }
 
@@ -76,8 +55,7 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
                 classFragment = FragmentSetting.class.getSimpleName();
             }
         } else {
-            fragmentSearch = new FragmentSearch();
-            Helper.openFragment(this, fragmentSearch, R.id.fragment);
+            Helper.openFragment(this, FragmentSearch.init(), R.id.fragment);
             classFragment = FragmentSearch.class.getSimpleName();
         }
     }
@@ -86,24 +64,15 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
     public boolean onNavigationItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.menu_kamus_jawa:
-                if (fragmentSearch == null) {
-                    fragmentSearch = new FragmentSearch();
-                }
-                Helper.openFragment(this, fragmentSearch, R.id.fragment);
+                Helper.openFragment(this, FragmentSearch.init(), R.id.fragment);
                 classFragment = FragmentSearch.class.getSimpleName();
                 break;
             case R.id.menu_kategori:
-                if (fragmentCategory == null) {
-                    fragmentCategory = new FragmentCategory();
-                }
-                Helper.openFragment(this, fragmentCategory, R.id.fragment);
+                Helper.openFragment(this, FragmentCategory.init(), R.id.fragment);
                 classFragment = FragmentCategory.class.getSimpleName();
                 break;
             case R.id.menu_kuis_seru:
-                if (fragmentKuis == null) {
-                    fragmentKuis = new FragmentKuis();
-                }
-                Helper.openFragment(this, fragmentKuis, R.id.fragment);
+                Helper.openFragment(this, FragmentKuis.init(), R.id.fragment);
                 classFragment = FragmentKuis.class.getSimpleName();
                 break;
             case R.id.menu_pengaturan:

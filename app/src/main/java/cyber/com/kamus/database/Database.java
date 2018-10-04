@@ -3,6 +3,7 @@ package cyber.com.kamus.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import cyber.com.kamus.adapter.AdapterSearch;
 import cyber.com.kamus.model.Kamus;
 import cyber.com.kamus.model.Kategori;
 import cyber.com.kamus.model.SearchResult;
@@ -154,6 +156,7 @@ public class Database extends SQLiteOpenHelper {
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
+
                 kamuses.add(
                         new Kamus(
                                 cursor.getInt(cursor.getColumnIndex(ID)),
@@ -162,17 +165,32 @@ public class Database extends SQLiteOpenHelper {
                                 cursor.getString(cursor.getColumnIndex(KATEGORI))
                         )
                 );
+                Log.d(getClass().getSimpleName(), "selectAll: " + cursor.getString(cursor.getColumnIndex(JAWA)));
+
                 cursor.moveToNext();
             }
 
             return kamuses;
         }
 
-        public ArrayList<SearchResult> selectAllToHashMapGroup() {
+        public ArrayList<SearchResult> selectAllToHashMapGroup(AdapterSearch.SearchFrom searchFrom) {
+            return selectAllToHas(searchFrom, "");
+        }
+
+        public ArrayList<SearchResult> selectAllSectionFormatFromCategory(AdapterSearch.SearchFrom searchFrom, String category) {
+            return selectAllToHas(searchFrom, category);
+        }
+
+        public ArrayList<SearchResult> selectAllToHas(AdapterSearch.SearchFrom searchFrom, String category) {
             ArrayList<SearchResult> searchResults = new ArrayList<>();
 
-            Cursor cursor = this.database.rawQuery("select distinct(substr(" + INDONESIA + ",1,1)) from " + TABLE,
-                    new String[]{});
+            String query_section = "select" +
+                    " distinct(upper(substr(" + (searchFrom.equals(AdapterSearch.SearchFrom.fromIndonesia) ? INDONESIA : JAWA) + ",1,1))) as a" +
+                    " from " + TABLE + "" +
+                    ((!category.isEmpty()) ? " where upper(trim(" + KATEGORI + ")) = upper(trim('" + category + "')) " : "") +
+                    " order by a asc";
+
+            Cursor cursor = this.database.rawQuery(query_section, new String[]{});
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
@@ -181,8 +199,13 @@ public class Database extends SQLiteOpenHelper {
                 //menambahkan section baru
                 searchResults.add(new SearchResult(section));
 
-                Cursor cursor_data = database.rawQuery("select * from " + TABLE +
-                        " where " + INDONESIA + " like '" + section + "%'", new String[]{});
+                String string = "select * from " + TABLE +
+                        " where " +
+                        "upper(substr(trim(" + (searchFrom.equals(AdapterSearch.SearchFrom.fromIndonesia) ? INDONESIA : JAWA) + "), 1, 1)) " +
+                        " like '" + section.toUpperCase() + "%' " +
+                        ((!category.isEmpty()) ? " and upper(trim(" + KATEGORI + ")) = upper(trim('" + category + "')) " : "");
+
+                Cursor cursor_data = database.rawQuery(string, new String[]{});
 
                 cursor_data.moveToFirst();
                 while (!cursor_data.isAfterLast()) {

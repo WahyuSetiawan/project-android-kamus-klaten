@@ -16,9 +16,17 @@ import java.util.ArrayList;
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.ViewHolderCategoryBinding;
 import cyber.com.kamus.model.Kategori;
+import cyber.com.kamus.util.listener.ListenerView;
+import cyber.com.kamus.util.listener.ListenerViewHolder;
 
 public class AdapterKategori extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<Kategori> kategoris = new ArrayList<>();
+
+    ListenerView.onClickViewHolder listenerViewHolder;
+
+    public void setListenerViewHolder(ListenerView.onClickViewHolder listenerViewHolder) {
+        this.listenerViewHolder = listenerViewHolder;
+    }
 
     @NonNull
     @Override
@@ -33,16 +41,6 @@ public class AdapterKategori extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         VHKategory vhKategory = (VHKategory) viewHolder;
 
-        Log.e(AdapterKategori.class.getSimpleName(), "onBindViewHolder: " + this.kategoris.get(i).getDrawable());
-
-//        Picasso.get().load(
-//                vhKategory.itemView.getResources().getIdentifier(
-//                        "icon_hewan", "drawable",
-//                        vhKategory.itemView.getContext().getPackageName()
-//                )
-//        ).into(vhKategory.viewHolderCategoryBinding.icon);
-
-
         Glide.with(viewHolder.itemView)
                 .load(vhKategory.itemView.getResources()
                         .getIdentifier(
@@ -54,6 +52,7 @@ public class AdapterKategori extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         vhKategory.viewHolderCategoryBinding
                 .title.setText(this.kategoris.get(i).getName());
+        vhKategory.listenerViewHolder = listenerViewHolder;
     }
 
     @Override
@@ -66,13 +65,23 @@ public class AdapterKategori extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.notifyItemInserted(this.kategoris.size() - 1);
     }
 
-    class VHKategory extends RecyclerView.ViewHolder {
+    public Kategori getItem(Integer position) {
+        return this.kategoris.get(position);
+    }
 
+    class VHKategory extends RecyclerView.ViewHolder {
         private final ViewHolderCategoryBinding viewHolderCategoryBinding;
+        public ListenerView.onClickViewHolder listenerViewHolder;
 
         public VHKategory(ViewHolderCategoryBinding viewHolderCategoryBinding) {
             super(viewHolderCategoryBinding.getRoot());
             this.viewHolderCategoryBinding = viewHolderCategoryBinding;
+            this.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listenerViewHolder.onClickListener(v, getAdapterPosition());
+                }
+            });
         }
     }
 }

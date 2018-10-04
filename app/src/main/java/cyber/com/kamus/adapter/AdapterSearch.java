@@ -18,8 +18,11 @@ import cyber.com.kamus.databinding.ViewHolderSectionBinding;
 import cyber.com.kamus.model.SearchResult;
 
 public class AdapterSearch extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements Filterable {
-    ArrayList<SearchResult> searchResults = new ArrayList<>();
-    ArrayList<SearchResult> searchResultsFiltered = new ArrayList<>();
+    private ArrayList<SearchResult> searchResults = new ArrayList<>();
+    private ArrayList<SearchResult> searchResultsFiltered = new ArrayList<>();
+
+    private SearchFrom searchFrom = SearchFrom.fromIndonesia;
+    private String TAG = getClass().getSimpleName();
 
     @NonNull
     @Override
@@ -50,28 +53,34 @@ public class AdapterSearch extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         switch (TypeLayout.values()[getItemViewType(i)]) {
             case section:
                 VHSection vhSection = (VHSection) viewHolder;
-                vhSection.binding.title.setText(this.searchResults.get(i).getTitle());
+                vhSection.binding.title.setText(this.searchResultsFiltered.get(i).getTitle());
                 break;
             case content:
                 VHContent vhContent = (VHContent) viewHolder;
-                vhContent.binding.textup.setText(this.searchResults.get(i).getKamus().getIndonesia());
-                vhContent.binding.textdown.setText(this.searchResults.get(i).getKamus().getJawa());
+                if (searchFrom.equals(SearchFrom.fromIndonesia)) {
+                    vhContent.binding.textup.setText(this.searchResultsFiltered.get(i).getKamus().getIndonesia());
+                    vhContent.binding.textdown.setText(this.searchResultsFiltered.get(i).getKamus().getJawa());
+                } else {
+                    vhContent.binding.textup.setText(this.searchResultsFiltered.get(i).getKamus().getJawa());
+                    vhContent.binding.textdown.setText(this.searchResultsFiltered.get(i).getKamus().getIndonesia());
+                }
                 break;
         }
     }
 
     @Override
     public int getItemCount() {
-        return searchResults.size();
+        return searchResultsFiltered.size();
     }
 
     @Override
     public int getItemViewType(int position) {
-        return this.searchResults.get(position).getTypeLayout().ordinal();
+        return searchResultsFiltered.get(position).getTypeLayout().ordinal();
     }
 
     public void setSearchResults(ArrayList<SearchResult> searchResults) {
         this.searchResults = searchResults;
+        this.searchResultsFiltered = searchResults;
         notifyDataSetChanged();
     }
 
@@ -80,24 +89,43 @@ public class AdapterSearch extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         return new Filter() {
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
-                String charString = constraint.toString();
+                String charString = constraint.toString().toLowerCase();
+                ArrayList<SearchResult> grandResult = new ArrayList<>();
 
-                if (charString.isEmpty()){
-                    searchResultsFiltered = searchResults;
-                }else{
+                if (charString.isEmpty()) {
+                    grandResult = searchResults;
+                } else {
                     ArrayList<SearchResult> results = new ArrayList<>();
+                    SearchResult srSection = null;
 
-                    for (SearchResult searchResult: searchResults) {
+                    for (SearchResult srFor : searchResults) {
+                        if (srFor.getTypeLayout().equals(TypeLayout.section)) {
+                            srSection = srFor;
+                        } else {
+                            if (srFor.getKamus().getIndonesia().toLowerCase().contains(charString)) {
+                                if (srSection != null) {
+                                    results.add(srSection);
+                                    srSection = null;
+                                }
 
+                                results.add(srFor);
+                            }
+
+                            grandResult = results;
+                        }
                     }
-
                 }
-                return null;
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = grandResult;
+
+                return filterResults;
             }
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-
+                searchResultsFiltered = (ArrayList<SearchResult>) results.values;
+                notifyDataSetChanged();
             }
         };
     }
@@ -122,6 +150,18 @@ public class AdapterSearch extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             super(binding.getRoot());
             this.binding = binding;
         }
+    }
 
+    public enum SearchFrom {
+        fromJawa, fromIndonesia
+    }
+
+    public void setSearchFrom(SearchFrom searchFrom) {
+        this.searchFrom = searchFrom;
+        notifyDataSetChanged();
+    }
+
+    public SearchFrom getSearchFrom() {
+        return searchFrom;
     }
 }
