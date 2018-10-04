@@ -17,7 +17,7 @@ public class AttrHelper {
 
     @SuppressLint("ResourceType")
     public int getColorBackground() {
-        @SuppressLint("Recycle") TypedArray attrs = context.obtainStyledAttributes(new int[]{R.attr.colorBackground});
+        @SuppressLint("Recycle") TypedArray attrs = context.obtainStyledAttributes(new int[]{R.attr.colorHomeBackground});
 
         return attrs.getColor(0, Color.WHITE);
     }

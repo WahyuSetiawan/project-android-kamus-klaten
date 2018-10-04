@@ -12,13 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".view.MainActivity"
-            android:theme="@style/AppTheme.noActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.noActionBar" />
         <activity
             android:name=".view.BantuanActivity"
             android:theme="@style/AppTheme.noActionBar" />
@@ -28,6 +22,14 @@
         <activity
             android:name=".view.CategoryActivity"
             android:theme="@style/AppTheme.noActionBar" />
+        <activity
+            android:name=".view.KuisActivity"
+            android:theme="@style/AppTheme.noActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -97,7 +97,12 @@ public class FragmentSearch extends Fragment {
         adapterSearchJawa.setSearchResults(
                 database.getTableKamus().selectAllToHashMapGroup(AdapterSearch.SearchFrom.fromJawa)
         );
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        database.close();
     }
 
     private TextWatcher textWatcher = new TextWatcher() {

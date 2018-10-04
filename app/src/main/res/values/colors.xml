@@ -53,7 +53,45 @@
     <color name="kamus_background_kuis_mode_default">#F5F5F5</color>
     <color name="kamus_background_kuis_mode_malam">#15202B</color>
 
-    <color name="kamus_text_kuis_title_mode_malam">#8697A4</color>
-    <color name="kamus_text_kuis_title_mode_default">#616161</color>
+    <color name="kamus_kuis_title_mode_malam">#8697A4</color>
+    <color name="kamus_kuis_title_mode_default">#616161</color>
+
+    <color name="kamus_kuis_backgroud_question_mode_default">#37474F</color>
+    <color name="kamus_kuis_backgroud_question_mode_malam">
+        @color/kamus_kuis_backgroud_question_mode_default
+    </color>
+
+    <color name="kamus_kuis_text_variable_mode_default">#212121</color>
+    <color name="kamus_kuis_text_variable_mode_malam">#ffffff</color>
+
+    <color name="kamus_kuis_text_question_mode_malam">#FFFFFF</color>
+    <color name="kamus_kuis_text_question_mode_default">@color/kamus_kuis_text_question_mode_malam
+    </color>
+
+    <color name="kamus_kuis_text_button_mode_default">#212121</color>
+    <color name="kamus_kuis_text_button_mode_malam">
+        @color/kamus_kuis_text_button_mode_default
+    </color>
+
+    <color name="kamus_kuis_text_button_true_mode_default">#FFFFFF</color>
+    <color name="kamus_kuis_text_button_true_mode_malam">
+        @color/kamus_kuis_text_button_true_mode_default
+    </color>
+
+    <color name="kamus_kuis_text_button_false_mode_default">#FFFFFF</color>
+    <color name="kamus_kuis_text_button_false_mode_malam">
+        @color/kamus_kuis_text_button_false_mode_default
+    </color>
+
+    <color name="kamus_kuis_button_mode_default">#FFFFFF</color>
+    <color name="kamus_kuis_button_mode_malam">@color/kamus_kuis_button_mode_default</color>
+
+    <color name="kamus_kuis_button_mode_true_default">#43A047</color>
+    <color name="kamus_kuis_button_mode_true_malam">@color/kamus_kuis_button_mode_true_default
+    </color>
+
+    <color name="kamus_kuis_button_mode_false_default">#D32F2F</color>
+    <color name="kamus_kuis_button_mode_false_malam">@color/kamus_kuis_button_mode_false_default
+    </color>
 
 </resources>

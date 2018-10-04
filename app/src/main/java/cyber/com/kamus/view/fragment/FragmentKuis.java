@@ -9,8 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import cyber.com.kamus.R;
+import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
 
-public class FragmentKuis extends Fragment {
+public class FragmentKuis extends Fragment implements ConnectionFragmentKuis {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,5 +27,15 @@ public class FragmentKuis extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public void nextKuis() {
+
+    }
+
+    @Override
+    public void finish() {
+
     }
 }

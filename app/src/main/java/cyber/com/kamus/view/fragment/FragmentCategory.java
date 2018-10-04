@@ -39,7 +39,6 @@ public class FragmentCategory extends Fragment {
         super.onCreate(savedInstanceState);
 
         database = new Database(this.getContext());
-
     }
 
     @Nullable
@@ -74,5 +73,11 @@ public class FragmentCategory extends Fragment {
         for (Kategori ka : kategoris) {
             adapterKategori.add(ka);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        database.close();
     }
 }

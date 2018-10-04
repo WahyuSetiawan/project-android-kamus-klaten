@@ -5,77 +5,105 @@
     <style name="kamus.string" />
 
     <style name="kamus.background">
-        <item name="android:background">?attr/colorBackground</item>
+        <item name="android:background">?attr/colorHomeBackground</item>
     </style>
 
     <style name="kamus.background.kuis">
-        <item name="android:background">?attr/colorBackgroundKuis</item>
+        <item name="android:background">?attr/colorKuisBackground</item>
     </style>
 
     <style name="kamus.kuis">
 
     </style>
 
-    <style name="kamus.kuis.view">
-    </style>
+    <style name="kamus.kuis.view"></style>
 
-    <style name="kamus.kuis.view.false">
-    </style>
+    <style name="kamus.kuis.view.false"></style>
 
-    <style name="kamus.kuis.view.true">
-    </style>
+    <style name="kamus.kuis.view.true"></style>
 
     <style name="kamus.kuis.text">
 
     </style>
 
-    <style name="kamus.kuis.text.true">
+    <style name="kamus.kuis.text.true" parent="kamus.kuis.text">
 
     </style>
 
-    <style name="kamus.kuis.text.false">
-        
+    <style name="kamus.kuis.text.false" parent="kamus.kuis.text">
+
+    </style>
+
+    <style name="kamus.kuis.text.question">
+
+    </style>
+
+    <style name="kamus.kuis.text.variable">
+
+    </style>
+
+    <style name="kamus.background.kuis.question">
+
+    </style>
+
+    <style name="kamus.kuis.text.title"></style>
+
+
+    <style name="kamus.kuis.button" />
+
+    <style name="kamus.kuis.button.answer" />
+
+    <style name="kamus.kuis.button.answer.default" parent="Base.Widget.AppCompat.Button">
+
+    </style>
+
+    <style name="kamus.kuis.button.answer.true" parent="kamus.kuis.button.answer.default">
+
+    </style>
+
+    <style name="kamus.kuis.button.answer.false" parent="kamus.kuis.button.answer.default">
+
     </style>
 
     <style name="kamus.string.toolbar" parent="roboto.medium">
-        <item name="android:textColor">?attr/colorToolbarMode</item>
+        <item name="android:textColor">?attr/colorHomeToolbarMode</item>
         <item name="android:textSize">20sp</item>
     </style>
 
     <style name="kamus.string.subtitle" parent="opensans.semibolditalic">
-        <item name="android:textColor">?attr/colorContentMode</item>
+        <item name="android:textColor">?attr/colorHomeContentMode</item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="kamus.string.title" parent="roboto.medium">
-        <item name="android:textColor">?attr/colorTitleMode</item>
+        <item name="android:textColor">?attr/colorHomeTitleMode</item>
         <item name="android:textSize">18sp</item>
     </style>
 
     <style name="kamus.string.pengaturantitle" parent="seguisb">
-        <item name="android:textColor">?attr/colorTextMode</item>
+        <item name="android:textColor">?attr/colorHomeTextMode</item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="kamus.string.content" parent="seguisb">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">?attr/colorContentMode</item>
+        <item name="android:textColor">?attr/colorHomeContentMode</item>
     </style>
 
 
     <style name="kamus.string.search" parent="roboto">
-        <item name="android:textColor">?attr/colorTextSearchMode</item>
+        <item name="android:textColor">?attr/colorHomeTextSearchMode</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:drawableRight">@drawable/ic_search_black_24dp</item>
         <item name="android:hint">Masukan Kata Disini</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:textColorHint">?attr/colorTextSearchMode</item>
+        <item name="android:textColorHint">?attr/colorHomeTextSearchMode</item>
     </style>
 
     <style name="kamus.tab" parent="Base.Widget.Design.TabLayout">
         <item name="tabTextAppearance">@style/kamus.tab.text</item>
         <item name="tabSelectedTextColor">?attr/colorAccentMode</item>
-        <item name="tabTextColor">?attr/colorTabLayoutMode</item>
+        <item name="tabTextColor">?attr/colorHomeTabLayoutMode</item>
         <item name="tabPaddingTop">-1dp</item>
         <item name="tabPaddingBottom">-1dp</item>
     </style>
@@ -86,7 +114,7 @@
     </style>
 
     <style name="ToolbarStyle" parent="Widget.AppCompat.ActionBar">
-        <item name="android:textColorPrimary">?attr/colorToolbarMode</item>
+        <item name="android:textColorPrimary">?attr/colorHomeToolbarMode</item>
     </style>
 
     <style name="kamus.string.search.section" parent="roboto.medium">
@@ -104,6 +132,5 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#616161</item>
     </style>
-
 
 </resources>

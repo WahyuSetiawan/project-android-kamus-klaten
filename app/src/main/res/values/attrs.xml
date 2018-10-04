@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    //variable global
     <attr name="colorAccentMode" format="color" />
-    <attr name="colorBackground" format="color" />
-    <attr name="colorTextMode" format="color" />
-    <attr name="colorTabLayoutMode" format="color" />
-    <attr name="colorTitleMode" format="color" />
-    <attr name="colorContentMode" format="color" />
-    <attr name="colorToolbarMode" format="color" />
-    <attr name="colorTextSearchMode" format="color" />
-    <attr name="colorTextBottomDefaultMode" format="color" />
-    <attr name="colorBackgroundKuis" format="color" />
+
+    //variable home
+    <attr name="colorHomeBackground" format="color" />
+    <attr name="colorHomeTextMode" format="color" />
+    <attr name="colorHomeTabLayoutMode" format="color" />
+    <attr name="colorHomeTitleMode" format="color" />
+    <attr name="colorHomeContentMode" format="color" />
+    <attr name="colorHomeToolbarMode" format="color" />
+    <attr name="colorHomeTextSearchMode" format="color" />
+    <attr name="colorHomeTextBottomDefaultMode" format="color" />
+
+    //variable kamus kuis
+    <attr name="colorKuisBackground" format="color" />
+    <attr name="colorKuisTextVariable" format="color" />
+    <attr name="colorKuisTextQuestion" format="color" />
+    <attr name="colorKuisBackgroundQuestion" format="color" />
+    <attr name="colorKuisButtonAnswer" format="color" />
+    <attr name="colorKuisButtonAnswerTrue" format="color" />
+    <attr name="colorKuisButtonAnswerFalse" format="color" />
+    <attr name="colorKuisTextTitle" format="color" />
+
+    //variable
+
 </resources>
