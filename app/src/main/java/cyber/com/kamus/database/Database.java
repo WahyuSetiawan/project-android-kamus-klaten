@@ -20,6 +20,7 @@ import java.util.HashMap;
 import cyber.com.kamus.adapter.AdapterSearch;
 import cyber.com.kamus.model.Kamus;
 import cyber.com.kamus.model.Kategori;
+import cyber.com.kamus.model.Kuis;
 import cyber.com.kamus.model.SearchResult;
 import cyber.com.kamus.view.fragment.FragmentSearch;
 
@@ -222,6 +223,28 @@ public class Database extends SQLiteOpenHelper {
             }
 
             return searchResults;
+        }
+
+        public ArrayList<Kamus> getKuis() {
+            ArrayList<Kamus> kuis = new ArrayList<>();
+
+            String string = "select * from  " + TABLE + " limit 10";
+
+            Cursor cursor = this.database.rawQuery(string, new String[]{});
+
+            if (cursor.moveToFirst()) {
+                while (cursor.moveToNext()) {
+                    kuis.add(new Kamus(
+                                    cursor.getInt(cursor.getColumnIndex(ID)),
+                                    cursor.getString(cursor.getColumnIndex(INDONESIA)),
+                                    cursor.getString(cursor.getColumnIndex(JAWA)),
+                                    cursor.getString(cursor.getColumnIndex(KATEGORI))
+                            )
+                    );
+                }
+            }
+
+            return kuis;
         }
     }
 }

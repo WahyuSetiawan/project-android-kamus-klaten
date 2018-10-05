@@ -80,21 +80,31 @@
             app:layout_constraintTop_toBottomOf="@id/background_question">
 
             <android.support.v7.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/button_rounded"
-                android:backgroundTint="@color/kamus_kuis_button_mode_true_malam"
-                android:minHeight="48dp"
-                android:text="Benar"
-                android:textSize="18dp" />
-
-            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/jawaban_1"
                 style="@style/kamus.kuis.button.answer.default"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_rounded_black"
-                android:backgroundTint="@color/kamus_kuis_button_mode_malam"
+                android:text="Jawaban 2" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/jawaban_2"
+                style="@style/kamus.kuis.button.answer.default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jawaban 2" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/jawaban_3"
+                style="@style/kamus.kuis.button.answer.default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jawaban 2" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/jawaban_4"
+                style="@style/kamus.kuis.button.answer.default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Jawaban 2" />
         </LinearLayout>
 

@@ -27,5 +27,5 @@
     <attr name="colorKuisTextTitle" format="color" />
 
     //variable
-
+    <attr name="colorKuisFinish" format="color" />
 </resources>

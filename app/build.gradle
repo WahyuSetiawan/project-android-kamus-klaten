@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "cyber.com.kamus"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -54,6 +54,12 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.7.22'
     // required if you want to use Mockito for Android tests
     androidTestImplementation 'org.mockito:mockito-android:2.7.22'
+
+    //paris
+    implementation 'com.airbnb.android:paris:1.0.0'
+    // If you are using Paris annotations
+    implementation 'com.airbnb.android:paris-annotations:1.0.0'
+    annotationProcessor 'com.airbnb.android:paris-processor:1.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

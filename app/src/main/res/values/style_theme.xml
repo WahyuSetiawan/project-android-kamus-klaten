@@ -47,6 +47,11 @@
         <item name="colorKuisButtonTextAnswerFalse">
             @color/kamus_kuis_text_button_false_mode_default
         </item>
+
+        //kuis finish
+        <item name="colorKuisFinish">
+            @color/kamus_finish_kuis_button_mode_default
+        </item>
     </style>
 
     <style name="AppTheme.noActionBar.theme_FF6F00" parent="AppTheme.noActionBar">
@@ -129,6 +134,11 @@
         </item>
         <item name="colorKuisButtonTextAnswerFalse">
             @color/kamus_kuis_text_button_false_mode_malam
+        </item>
+
+        //variable
+        <item name="colorKuisFinish">
+            @color/kamus_finish_kuis_button_mode_default
         </item>
     </style>
 

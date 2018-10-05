@@ -94,4 +94,8 @@
     <color name="kamus_kuis_button_mode_false_malam">@color/kamus_kuis_button_mode_false_default
     </color>
 
+    //color finish kuis
+    <color name="kamus_finish_kuis_button_mode_malam">#798A97</color>
+    <color name="kamus_finish_kuis_button_mode_default">#757575</color>
+
 </resources>

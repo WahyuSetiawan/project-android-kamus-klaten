@@ -11,15 +11,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+
+import com.airbnb.paris.Paris;
 
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.FragmentKuisSingleBinding;
+import cyber.com.kamus.model.Kuis;
 import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
 
 public class FragmentKuis extends Fragment implements ConnectionFragmentKuis {
     FragmentKuisSingleBinding binding;
 
-    public static FragmentKuis init() {
+    public static FragmentKuis init(Kuis kuis) {
         FragmentKuis fragmentKuis = new FragmentKuis();
 
         return fragmentKuis;
@@ -46,7 +50,10 @@ public class FragmentKuis extends Fragment implements ConnectionFragmentKuis {
         binding.question.setText("Abang");
 
         for (int i = 0; i < 4; i++) {
-            Button button = new Button(new ContextThemeWrapper(getContext(), R.style.kamus_kuis_button_answer_default), null, R.style.kamus_kuis_button_answer_default);
+            Button button = new Button(this.getContext());
+            button.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
+
+            Paris.style(button).apply(R.style.kamus_kuis_button_answer_default);
 
             button.setText("Jawaban 1");
 
@@ -60,7 +67,12 @@ public class FragmentKuis extends Fragment implements ConnectionFragmentKuis {
     }
 
     @Override
-    public void finish() {
+    public void close() {
+
+    }
+
+    @Override
+    public void repeat() {
 
     }
 }

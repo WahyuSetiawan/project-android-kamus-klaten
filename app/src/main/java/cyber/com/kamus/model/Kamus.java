@@ -1,10 +1,12 @@
 package cyber.com.kamus.model;
 
-public class Kamus {
-    int id;
-    String indonesia;
-    String jawa;
-    String category;
+import android.os.Parcelable;
+
+public class Kamus implements Parcelable {
+    private int id;
+    private String indonesia;
+    private String jawa;
+    private String category;
 
     public Kamus(String indonesia, String jawa, String category) {
         this.indonesia = indonesia;
