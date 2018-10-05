@@ -38,11 +38,11 @@
 
                     <TextView
                         android:id="@+id/title"
+                        style="@style/kamus.string.category"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="9dp"
-                        android:textColor="@android:color/white" />
+                        android:layout_marginTop="9dp" />
 
                 </LinearLayout>
             </android.support.constraint.ConstraintLayout>

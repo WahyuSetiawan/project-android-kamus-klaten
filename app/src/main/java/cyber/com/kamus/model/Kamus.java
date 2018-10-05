@@ -1,5 +1,6 @@
 package cyber.com.kamus.model;
 
+import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Kamus implements Parcelable {
@@ -20,6 +21,38 @@ public class Kamus implements Parcelable {
         this.jawa = jawa;
         this.category = category;
     }
+
+    protected Kamus(Parcel in) {
+        id = in.readInt();
+        indonesia = in.readString();
+        jawa = in.readString();
+        category = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(indonesia);
+        dest.writeString(jawa);
+        dest.writeString(category);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Kamus> CREATOR = new Creator<Kamus>() {
+        @Override
+        public Kamus createFromParcel(Parcel in) {
+            return new Kamus(in);
+        }
+
+        @Override
+        public Kamus[] newArray(int size) {
+            return new Kamus[size];
+        }
+    };
 
     public int getId() {
         return id;

@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="kamus.string.search" parent="roboto">
-        <item name="android:textColor">?attr/colorHomeTextSearchMode</item>
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:drawableRight">@drawable/ic_search_black_24dp</item>
-        <item name="android:hint">Masukan Kata Disini</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColorHint">?attr/colorHomeTextSearchMode</item>
-        <item name="android:drawableTint">?attr/colorHomeTextSearchMode</item>
-    </style>
-
-    <style name="toolbar" parent="Base.V7.Widget.AppCompat.Toolbar">
-        <item name="android:titleTextColor">?attr/colorHomeToolbarMode</item>
-        <item name="android:subtitleTextColor">?attr/colorHomeToolbarMode</item>
-    </style>
-
 </resources>

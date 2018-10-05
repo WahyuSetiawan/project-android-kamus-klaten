@@ -1,16 +1,21 @@
 package cyber.com.kamus.view;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
 
 import cyber.com.kamus.R;
 import cyber.com.kamus.database.Database;
 import cyber.com.kamus.model.Kamus;
 import cyber.com.kamus.model.Kuis;
+import cyber.com.kamus.model.KuisAdapter;
 import cyber.com.kamus.util.Helper;
 import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
 import cyber.com.kamus.view.fragment.FragmentDaftarKuis;
@@ -18,34 +23,64 @@ import cyber.com.kamus.view.fragment.FragmentFinishKuis;
 import cyber.com.kamus.view.fragment.FragmentKuis;
 
 public class KuisActivity extends AppCompatActivity implements ConnectionFragmentKuis {
+    public static final String KUISDATA = "KUISDATA";
+    public static final String ID = "ID";
     private Database database;
-    private ArrayList<Kamus> kamuses = new ArrayList<>();
-    private ArrayList<Kuis> kuiss = new ArrayList<>();
-    private Integer position = 0;
+
+    private ArrayList<Kamus> tempDataKamus = new ArrayList<>();
+    private ArrayList<Kuis> dataPermainanKuis = new ArrayList<>();
+    private ArrayList<Kuis> dataPermainanKuisHasil = new ArrayList<>();
+
+    private int jumlahSoal = 3;
+
+    private KuisAdapter kuisAdapter;
+    private int idData;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Helper.chooseTheme(this);
         setContentView(R.layout.activity_kuis);
-        database = new Database(this);
-        kamuses = database.getTableKamus().getKuis();
 
-        for (Kamus kamus : kamuses) {
+        Intent intent = getIntent();
+
+        if (intent != null) {
+            this.kuisAdapter = intent.getParcelableExtra(KUISDATA);
+            idData = intent.getIntExtra(this.ID, -1);
+        }
+
+        database = new Database(this);
+        tempDataKamus = database.getTableKamus().getKuis();
+
+        for (Kamus kamus : tempDataKamus) {
             Kuis kuis = new Kuis();
 
             kuis.setKamus(kamus);
+            kuis.setJawaBenar(new Random().nextInt(jumlahSoal - 1));
 
-            for (int i = 0; i < 3; i++) {
-                kuis.getKamuses().add(
-                        kamuses.get(new Random().nextInt(kamuses.size()))
-                );
+            ArrayList<Integer> tempIndex = new ArrayList<>();
+
+            for (int i = 0; i < jumlahSoal; i++) {
+                int index = new Random().nextInt(tempDataKamus.size());
+
+                while (true) {
+                    if (!tempIndex.contains(index)
+                            && index != tempDataKamus.indexOf(kamus)
+                            && tempIndex.size() < tempDataKamus.size() - 1) {
+                        break;
+                    } else {
+                        index = new Random().nextInt(tempDataKamus.size());
+                    }
+                }
+                tempIndex.add(index);
+                kuis.getDataJawabKamusLain().add(tempDataKamus.get(index));
             }
 
-            kuiss.add(kuis);
+            dataPermainanKuis.add(kuis);
         }
 
-        Helper.openFragment(this, FragmentKuis.init(kuiss.get(0)), R.id.fragment_layout);
+        Helper.openFragment(this, FragmentKuis.init(dataPermainanKuis.get(0)), R.id.fragment_layout);
     }
 
     @Override
@@ -55,26 +90,59 @@ public class KuisActivity extends AppCompatActivity implements ConnectionFragmen
     }
 
     @Override
-    public void nextKuis() {
-        position++;
-        if (position <= kamuses.size())
-            Helper.openFragment(this, FragmentKuis.init(this.kuiss.get(position)), R.id.fragment_layout);
+    public void nextKuis(Kuis kuis) {
+        this.dataPermainanKuisHasil.add(kuis);
+
+        if (dataPermainanKuisHasil.size() < tempDataKamus.size())
+            Helper.openFragment(this,
+                    FragmentKuis.init(this.dataPermainanKuis.get(dataPermainanKuisHasil.size())),
+                    R.id.fragment_layout);
         else
-            close();
+            finishKuis();
+    }
+
+    private void finishKuis() {
+        int score = 0;
+
+        for (Kuis kuisItem : dataPermainanKuisHasil) {
+            score += (kuisItem.getJawaBenar() == kuisItem.getJawab()) ? 10 : 0;
+        }
+
+        kuisAdapter.setScore(score);
+        kuisAdapter.setStatus(true);
+
+        database.getTableKuis().update(this.kuisAdapter);
+
+        Helper.openFragment(this, FragmentFinishKuis.init(kuisAdapter), R.id.fragment_layout);
     }
 
     @Override
     public void close() {
-        Helper.openFragment(this, FragmentFinishKuis.init(), R.id.fragment_layout);
+        finish();
     }
 
     @Override
     public void finish() {
+        database.close();
+
+        Intent intent = new Intent();
+
+        intent.putExtra(this.KUISDATA, kuisAdapter);
+        intent.putExtra(this.ID, idData);
+
+        setResult(Activity.RESULT_OK, intent);
+
         super.finish();
     }
 
     @Override
     public void repeat() {
+        this.dataPermainanKuisHasil = new ArrayList<>();
+        Helper.openFragment(this, FragmentKuis.init(dataPermainanKuis.get(0)), R.id.fragment_layout);
+    }
+
+    @Override
+    public void next() {
 
     }
 }

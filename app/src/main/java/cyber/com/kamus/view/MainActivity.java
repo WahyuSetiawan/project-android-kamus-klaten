@@ -1,9 +1,12 @@
 package cyber.com.kamus.view;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.ActivityNavigationBinding;
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
     private ActivityNavigationBinding binding;
     private String classFragment;
     private static final String FRAGMENT = "FRAGMENT";
+    private FragmentDaftarKuis fragmentDaftarKuis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
                 classFragment = FragmentCategory.class.getSimpleName();
                 break;
             case R.id.menu_kuis_seru:
-                Helper.openFragment(this, FragmentDaftarKuis.init(), R.id.fragment);
+                Helper.openFragment(this, (fragmentDaftarKuis = FragmentDaftarKuis.init()), R.id.fragment);
                 classFragment = FragmentDaftarKuis.class.getSimpleName();
                 break;
             case R.id.menu_pengaturan:
@@ -89,5 +93,11 @@ public class MainActivity extends AppCompatActivity implements ViewModelMainActi
         savedInstanceState.putString(FRAGMENT, classFragment);
 
         super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+//        fragmentDaftarKuis.onActivityResult(requestCode, resultCode, data);
     }
 }

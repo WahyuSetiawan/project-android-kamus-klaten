@@ -29,4 +29,41 @@ public class AttrHelper {
         return attrs.getColor(0, Color.WHITE);
     }
 
+    public int getColorButtonTrue() {
+        @SuppressLint("Recycle") TypedArray attrs = context.obtainStyledAttributes(new int[]{R.attr.colorKuisButtonAnswerTrue});
+
+        return attrs.getColor(0, Color.WHITE);
+    }
+
+    public int getColorButtonDefault() {
+        @SuppressLint("Recycle") TypedArray attrs = context.obtainStyledAttributes(new int[]{R.attr.colorKuisButtonAnswer});
+
+        return attrs.getColor(0, Color.WHITE);
+    }
+
+    public int getColorButtonFalse() {
+        @SuppressLint("Recycle") TypedArray attrs = context.obtainStyledAttributes(new int[]{R.attr.colorKuisButtonAnswerFalse});
+
+        return attrs.getColor(0, Color.WHITE);
+    }
+
+    public int getColorButtonTextTrue() {
+        @SuppressLint("Recycle") TypedArray attrs = context.obtainStyledAttributes(new int[]{R.attr.colorKuisButtonTextAnswerTrue});
+
+        return attrs.getColor(0, Color.WHITE);
+    }
+
+
+    public int getColorButtonTextFalse() {
+        @SuppressLint("Recycle") TypedArray attrs = context.obtainStyledAttributes(new int[]{R.attr.colorKuisButtonTextAnswerFalse});
+
+        return attrs.getColor(0, Color.WHITE);
+    }
+
+    public int getColorButtonTextDefault() {
+        @SuppressLint("Recycle") TypedArray attrs = context.obtainStyledAttributes(new int[]{R.attr.colorKuisButtonTextAnswer});
+
+        return attrs.getColor(0, Color.WHITE);
+    }
+
 }

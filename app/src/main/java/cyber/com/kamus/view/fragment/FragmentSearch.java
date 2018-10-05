@@ -27,6 +27,7 @@ import cyber.com.kamus.adapter.AdapterSearch;
 import cyber.com.kamus.database.Database;
 import cyber.com.kamus.databinding.FragmentSearchBinding;
 import cyber.com.kamus.util.adapter.Adapter;
+import cyber.com.kamus.util.decoration.LinearItemDecoration;
 
 public class FragmentSearch extends Fragment {
     public static final String BAHASA_JAWA = "Bahasa Jawa";
@@ -71,7 +72,9 @@ public class FragmentSearch extends Fragment {
 
         binding.recycler.setLayoutManager(new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false));
-        binding.recycler.setAdapter(adapterSearchIndonesia);
+        binding.recycler.addItemDecoration(new LinearItemDecoration(0, 10,
+                LinearItemDecoration.TypeDirection.vertical));
+        binding.recycler.setAdapter(adapterSearchJawa);
 
         binding.tabCategory.addTab(binding.tabCategory.newTab().setText(BAHASA_JAWA));
         binding.tabCategory.addTab(binding.tabCategory.newTab().setText(BAHASA_INDONESIA));

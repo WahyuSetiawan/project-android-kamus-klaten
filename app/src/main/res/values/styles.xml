@@ -34,12 +34,14 @@
 
     </style>
 
-    <style name="kamus.kuis.text.question" parent="seguisb">
+    <style name="kamus.kuis.text.question">
+        <item name="android:fontFamily">@font/seguisb</item>
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">?attr/colorKuisTextQuestion</item>
     </style>
 
-    <style name="kamus.kuis.text.variable" parent="roboto.medium">
+    <style name="kamus.kuis.text.variable">
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?attr/colorKuisTextVariable</item>
     </style>
@@ -48,7 +50,8 @@
         <item name="android:background">?attr/colorKuisBackgroundQuestion</item>
     </style>
 
-    <style name="kamus.kuis.text.title" parent="roboto.medium">
+    <style name="kamus.kuis.text.title">
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">20dp</item>
         <item name="android:textColor">?attr/colorKuisTextTitle</item>
     </style>
@@ -81,33 +84,39 @@
         </item>
     </style>
 
-    <style name="kamus.string.toolbar" parent="roboto.medium">
+    <style name="kamus.string.toolbar">
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">?attr/colorHomeToolbarMode</item>
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="kamus.string.subtitle" parent="opensans.semibolditalic">
+    <style name="kamus.string.subtitle">
+        <item name="android:fontFamily">@font/opensans_semibolditalic</item>
         <item name="android:textColor">?attr/colorHomeContentMode</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="kamus.string.title" parent="roboto.medium">
+    <style name="kamus.string.title">
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">?attr/colorHomeTitleMode</item>
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="kamus.string.pengaturantitle" parent="seguisb">
+    <style name="kamus.string.pengaturantitle">
+        <item name="android:fontFamily">@font/seguisb</item>
         <item name="android:textColor">?attr/colorHomeTextMode</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="kamus.string.content" parent="seguisb">
+    <style name="kamus.string.content">
+        <item name="android:fontFamily">@font/seguisb</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?attr/colorHomeContentMode</item>
     </style>
 
 
-    <style name="kamus.string.search" parent="roboto">
+    <style name="kamus.string.search">
+        <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textColor">?attr/colorHomeTextSearchMode</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:drawableRight">@drawable/ic_search_black_24dp</item>
@@ -124,7 +133,8 @@
         <item name="tabPaddingBottom">-1dp</item>
     </style>
 
-    <style name="kamus.tab.text" parent="roboto">
+    <style name="kamus.tab.text">
+        <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">14sp</item>
     </style>
@@ -133,20 +143,36 @@
         <item name="android:textColorPrimary">?attr/colorHomeToolbarMode</item>
     </style>
 
-    <style name="kamus.string.search.section" parent="roboto.medium">
+    <style name="kamus.string.title.search">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">?attr/colorHomeTextSearchMode</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableRight">@drawable/ic_search_black_24dp</item>
+        <item name="android:hint">Masukan Kata Disini</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">?attr/colorHomeTextSearchMode</item>
+        <item name="android:drawableTint" tools:targetApi="m">?attr/colorHomeTextSearchMode</item>
+    </style>
+
+    <style name="kamus.string.section">
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">34sp</item>
         <item name="android:textColor">?attr/colorAccentMode</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="kamus.string.textup" parent="roboto.medium">
+    <style name="kamus.string.textup">
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">#212121</item>
+        <item name="android:textColor">?attr/colorKuisTextTitle</item>
     </style>
 
-    <style name="kamus.string.textdown" parent="roboto.medium">
+    <style name="kamus.string.textdown">
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">#616161</item>
+        <item name="android:textColor">?attr/colorHomeContentMode</item>
     </style>
 
     <style name="kamus.kuis.button.answer.finish">
@@ -182,5 +208,30 @@
     <style name="kamus.kuis.text.finish.time" parent="kamus.kuis.text.finish">
         <item name="android:textSize">16sp</item>
     </style>
+
+    <style name="toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="theme">@style/kamus.toolbar</item>
+        <item name="android:titleTextAppearance" tools:targetApi="lollipop">@style/kamus.toolbar.title</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!--<item name="android:subtitleTextColor" tools:targetApi="m">?attr/colorHomeToolbarMode</item>-->
+    </style>
+
+    <style name="kamus.toolbar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">?attr/colorHomeToolbarMode</item>
+    </style>
+
+    <style name="kamus.toolbar.title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!-- Set title color -->
+        <item name="android:textColor">?attr/colorHomeToolbarMode</item>
+    </style>
+
+    <style name="kamus.string.category">
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 
 </resources>
