@@ -93,6 +93,8 @@
                 style="@style/kamus.kuis.button.answer.default"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button_rounded_black"
+                android:backgroundTint="@color/kamus_kuis_button_mode_malam"
                 android:text="Jawaban 2" />
         </LinearLayout>
 
