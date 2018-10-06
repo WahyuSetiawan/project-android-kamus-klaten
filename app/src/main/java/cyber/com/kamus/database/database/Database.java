@@ -1,9 +1,13 @@
-package cyber.com.kamus.database;
+package cyber.com.kamus.database.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
+
+import cyber.com.kamus.database.TableCategory;
+import cyber.com.kamus.database.TableKamus;
+import cyber.com.kamus.database.TableKuis;
 
 public class Database extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "DATABASE_KAMUS";

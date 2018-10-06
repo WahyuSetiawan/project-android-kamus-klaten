@@ -14,13 +14,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import cyber.com.kamus.R;
 import cyber.com.kamus.adapter.AdapterKuis;
-import cyber.com.kamus.database.Database;
+import cyber.com.kamus.database.database.Database;
 import cyber.com.kamus.databinding.FragmentKuisBinding;
-import cyber.com.kamus.model.Kuis;
 import cyber.com.kamus.model.KuisAdapter;
 import cyber.com.kamus.util.decoration.GridItemDecoration;
 import cyber.com.kamus.util.listener.ListenerView;

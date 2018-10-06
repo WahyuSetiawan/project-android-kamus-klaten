@@ -51,8 +51,6 @@ public class TableCategory extends Table {
         contentValues.put(GAMBAR, kategori.getDrawable());
 
         db.insert(table, null, contentValues);
-
-        Log.i(getClass().getSimpleName(), kategori.getName());
     }
 
     public ArrayList<Kategori> getCategories() {

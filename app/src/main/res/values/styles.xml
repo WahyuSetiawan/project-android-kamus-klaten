@@ -16,12 +16,6 @@
 
     </style>
 
-    <style name="kamus.kuis.view"></style>
-
-    <style name="kamus.kuis.view.false"></style>
-
-    <style name="kamus.kuis.view.true"></style>
-
     <style name="kamus.kuis.text">
 
     </style>
@@ -211,19 +205,12 @@
 
     <style name="toolbar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="theme">@style/kamus.toolbar</item>
-        <item name="android:titleTextAppearance" tools:targetApi="lollipop">@style/kamus.toolbar.title</item>
         <item name="android:textColorPrimary">@android:color/white</item>
-        <!--<item name="android:subtitleTextColor" tools:targetApi="m">?attr/colorHomeToolbarMode</item>-->
+        <item name="titleTextColor" tools:targetApi="m">?attr/colorHomeToolbarMode</item>
     </style>
 
     <style name="kamus.toolbar" parent="ThemeOverlay.AppCompat.ActionBar">
-        <!-- Customize color of navigation drawer icon and back arrow -->
         <item name="colorControlNormal">?attr/colorHomeToolbarMode</item>
-    </style>
-
-    <style name="kamus.toolbar.title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <!-- Set title color -->
-        <item name="android:textColor">?attr/colorHomeToolbarMode</item>
     </style>
 
     <style name="kamus.string.category">

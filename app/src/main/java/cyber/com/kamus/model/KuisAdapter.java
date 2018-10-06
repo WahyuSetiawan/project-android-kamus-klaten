@@ -7,9 +7,9 @@ public class KuisAdapter implements Parcelable {
     private String label;
     private Boolean status;
     private int score;
-    private int time;
+    private long time;
 
-    public KuisAdapter(String label, Boolean status, int score, int time) {
+    public KuisAdapter(String label, Boolean status, int score, long time) {
         this.label = label;
         this.status = status;
         this.score = score;
@@ -30,7 +30,7 @@ public class KuisAdapter implements Parcelable {
         byte tmpStatus = in.readByte();
         status = tmpStatus == 0 ? null : tmpStatus == 1;
         score = in.readInt();
-        time = in.readInt();
+        time = in.readLong();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class KuisAdapter implements Parcelable {
         dest.writeString(label);
         dest.writeByte((byte) (status == null ? 0 : status ? 1 : 2));
         dest.writeInt(score);
-        dest.writeInt(time);
+        dest.writeLong(time);
     }
 
     @Override
@@ -82,11 +82,11 @@ public class KuisAdapter implements Parcelable {
         this.score = score;
     }
 
-    public int getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(long time) {
         this.time = time;
     }
 }

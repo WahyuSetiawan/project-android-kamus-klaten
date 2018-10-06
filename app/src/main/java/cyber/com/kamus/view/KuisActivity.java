@@ -5,20 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Timer;
 
 import cyber.com.kamus.R;
-import cyber.com.kamus.database.Database;
+import cyber.com.kamus.database.database.Database;
 import cyber.com.kamus.model.Kamus;
 import cyber.com.kamus.model.Kuis;
 import cyber.com.kamus.model.KuisAdapter;
 import cyber.com.kamus.util.Helper;
 import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
-import cyber.com.kamus.view.fragment.FragmentDaftarKuis;
 import cyber.com.kamus.view.fragment.FragmentFinishKuis;
 import cyber.com.kamus.view.fragment.FragmentKuis;
 
@@ -35,6 +32,7 @@ public class KuisActivity extends AppCompatActivity implements ConnectionFragmen
 
     private KuisAdapter kuisAdapter;
     private int idData;
+    private KuisAdapter kuisAdapterStart;
 
 
     @Override
@@ -46,8 +44,10 @@ public class KuisActivity extends AppCompatActivity implements ConnectionFragmen
         Intent intent = getIntent();
 
         if (intent != null) {
-            this.kuisAdapter = intent.getParcelableExtra(KUISDATA);
-            idData = intent.getIntExtra(this.ID, -1);
+            kuisAdapter = intent.getParcelableExtra(KUISDATA);
+            kuisAdapter.setTime(0);
+            kuisAdapterStart = kuisAdapter;
+            idData = intent.getIntExtra(ID, -1);
         }
 
         database = new Database(this);
@@ -80,7 +80,8 @@ public class KuisActivity extends AppCompatActivity implements ConnectionFragmen
             dataPermainanKuis.add(kuis);
         }
 
-        Helper.openFragment(this, FragmentKuis.init(dataPermainanKuis.get(0)), R.id.fragment_layout);
+        Helper.openFragment(this, FragmentKuis.init(dataPermainanKuis.get(0), kuisAdapter),
+                R.id.fragment_layout);
     }
 
     @Override
@@ -90,12 +91,21 @@ public class KuisActivity extends AppCompatActivity implements ConnectionFragmen
     }
 
     @Override
-    public void nextKuis(Kuis kuis) {
+    public void nextKuis(Kuis kuis, KuisAdapter kuisAdapter) {
         this.dataPermainanKuisHasil.add(kuis);
+
+        int score = 0;
+
+        for (Kuis kuisItem : dataPermainanKuisHasil) {
+            score += (kuisItem.getJawaBenar() == kuisItem.getJawab()) ? 10 : 0;
+        }
+
+        kuisAdapter.setScore(score);
+        this.kuisAdapter = kuisAdapter;
 
         if (dataPermainanKuisHasil.size() < tempDataKamus.size())
             Helper.openFragment(this,
-                    FragmentKuis.init(this.dataPermainanKuis.get(dataPermainanKuisHasil.size())),
+                    FragmentKuis.init(dataPermainanKuis.get(dataPermainanKuisHasil.size()), kuisAdapter),
                     R.id.fragment_layout);
         else
             finishKuis();
@@ -127,8 +137,8 @@ public class KuisActivity extends AppCompatActivity implements ConnectionFragmen
 
         Intent intent = new Intent();
 
-        intent.putExtra(this.KUISDATA, kuisAdapter);
-        intent.putExtra(this.ID, idData);
+        intent.putExtra(KUISDATA, kuisAdapter);
+        intent.putExtra(ID, idData);
 
         setResult(Activity.RESULT_OK, intent);
 
@@ -138,7 +148,10 @@ public class KuisActivity extends AppCompatActivity implements ConnectionFragmen
     @Override
     public void repeat() {
         this.dataPermainanKuisHasil = new ArrayList<>();
-        Helper.openFragment(this, FragmentKuis.init(dataPermainanKuis.get(0)), R.id.fragment_layout);
+        this.kuisAdapter = kuisAdapterStart;
+
+        Helper.openFragment(this, FragmentKuis.init(dataPermainanKuis.get(0), kuisAdapter),
+                R.id.fragment_layout);
     }
 
     @Override

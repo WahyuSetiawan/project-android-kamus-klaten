@@ -5,12 +5,10 @@ import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.HandlerThread;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,45 +17,95 @@ import android.widget.LinearLayout;
 
 import com.airbnb.paris.Paris;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import cyber.com.kamus.R;
 import cyber.com.kamus.databinding.FragmentKuisSingleBinding;
 import cyber.com.kamus.model.Kuis;
+import cyber.com.kamus.model.KuisAdapter;
 import cyber.com.kamus.preferences.AttrHelper;
-import cyber.com.kamus.util.Helper;
 import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
 
 public class FragmentKuis extends Fragment implements View.OnClickListener {
     public static final String KUIS = "KUIS";
+    public static final String KUISADAPTER = "KUISADAPTER";
     private FragmentKuisSingleBinding binding;
     private Kuis kuis;
+    private KuisAdapter kuisAdapter;
     private ArrayList<Button> buttons = new ArrayList<>();
 
-    public static FragmentKuis init(Kuis kuis) {
+    private String EVENT_DATE_TIME = "2018-12-31 10:30:00";
+    private String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    private Handler handler = new Handler();
+    private Runnable runnable;
+    private Date start_date ;
+    private long diff = 0;
+
+    public static FragmentKuis init(Kuis kuis, KuisAdapter kuisAdapter) {
         FragmentKuis fragmentKuis = new FragmentKuis();
 
         Bundle bundle = new Bundle();
         bundle.putParcelable(KUIS, kuis);
+        bundle.putParcelable(KUISADAPTER, kuisAdapter);
 
         fragmentKuis.setArguments(bundle);
 
         return fragmentKuis;
     }
 
+    private void countDownStart() {
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    handler.postDelayed(this, 1000);
+//                    SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
+//                    Date event_date = dateFormat.parse(EVENT_DATE_TIME);
+                    Date current_time = new Date();
+
+
+                    if (current_time.after(start_date)) {
+                        diff = current_time.getTime() - start_date.getTime() + kuisAdapter.getTime();
+
+                        long Days = diff / (24 * 60 * 60 * 1000);
+                        long Hours = diff / (60 * 60 * 1000) % 24;
+                        long Minutes = diff / (60 * 1000) % 60;
+                        long Seconds = diff / 1000 % 60;
+
+                        binding.time.setText("Waktu " + Minutes + ":" + Seconds);
+
+                    } else {
+                        handler.removeCallbacks(runnable);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        handler.postDelayed(runnable, 0);
+    }
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            this.kuis = getArguments().getParcelable(KUIS);
+            kuis = getArguments().getParcelable(KUIS);
+            kuisAdapter = getArguments().getParcelable(KUISADAPTER);
+
+            start_date = new Date();
         }
     }
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return (binding = DataBindingUtil.inflate(inflater, R.layout.fragment_kuis_single, container, false)).getRoot();
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        return (binding = DataBindingUtil.inflate(inflater, R.layout.fragment_kuis_single, container,
+                false)).getRoot();
     }
 
     @Override
@@ -65,8 +113,8 @@ public class FragmentKuis extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 
         binding.toptitle.setText("Kuis 1");
-        binding.skor.setText("Skor : 000");
-        binding.time.setText("Waktu : 00:00");
+        binding.skor.setText("Skor : " + kuisAdapter.getScore());
+        binding.time.setText("Waktu : " + kuisAdapter.getTime());
         binding.question.setText(kuis.getKamus().getJawa());
 
         int index = 0;
@@ -89,6 +137,8 @@ public class FragmentKuis extends Fragment implements View.OnClickListener {
 
             buttons.add(button);
         }
+
+        countDownStart();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -120,7 +170,8 @@ public class FragmentKuis extends Fragment implements View.OnClickListener {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                ((ConnectionFragmentKuis) getActivity()).nextKuis(kuis);
+                kuisAdapter.setTime(diff);
+                ((ConnectionFragmentKuis) getActivity()).nextKuis(kuis, kuisAdapter);
             }
         }, 100);
     }

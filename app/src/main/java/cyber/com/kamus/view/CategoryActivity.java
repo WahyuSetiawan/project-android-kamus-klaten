@@ -9,7 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 
 import cyber.com.kamus.R;
 import cyber.com.kamus.adapter.AdapterSearch;
-import cyber.com.kamus.database.Database;
+import cyber.com.kamus.database.database.Database;
 import cyber.com.kamus.databinding.ActivityCategoryBinding;
 import cyber.com.kamus.util.Helper;
 

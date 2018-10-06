@@ -10,23 +10,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 import cyber.com.kamus.R;
 import cyber.com.kamus.adapter.AdapterSearch;
-import cyber.com.kamus.database.Database;
+import cyber.com.kamus.database.database.Database;
 import cyber.com.kamus.databinding.FragmentSearchBinding;
-import cyber.com.kamus.util.adapter.Adapter;
 import cyber.com.kamus.util.decoration.LinearItemDecoration;
 
 public class FragmentSearch extends Fragment {
@@ -72,7 +63,7 @@ public class FragmentSearch extends Fragment {
 
         binding.recycler.setLayoutManager(new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false));
-        binding.recycler.addItemDecoration(new LinearItemDecoration(0, 10,
+        binding.recycler.addItemDecoration(new LinearItemDecoration(0, 15,
                 LinearItemDecoration.TypeDirection.vertical));
         binding.recycler.setAdapter(adapterSearchJawa);
 

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import cyber.com.kamus.R;
 import cyber.com.kamus.adapter.AdapterKategori;
-import cyber.com.kamus.database.Database;
+import cyber.com.kamus.database.database.Database;
 import cyber.com.kamus.databinding.FragmentCategoryBinding;
 import cyber.com.kamus.model.Kategori;
 import cyber.com.kamus.util.decoration.GridItemDecoration;
