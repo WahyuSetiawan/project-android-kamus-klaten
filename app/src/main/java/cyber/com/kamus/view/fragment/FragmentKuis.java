@@ -31,6 +31,7 @@ import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
 public class FragmentKuis extends Fragment implements View.OnClickListener {
     public static final String KUIS = "KUIS";
     public static final String KUISADAPTER = "KUISADAPTER";
+
     private FragmentKuisSingleBinding binding;
     private Kuis kuis;
     private KuisAdapter kuisAdapter;
@@ -122,7 +123,8 @@ public class FragmentKuis extends Fragment implements View.OnClickListener {
         for (int i = 0; i < 4; i++) {
             Button button = new Button(this.getContext());
             button.setId(i);
-            button.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
+            button.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
             Paris.style(button).apply(R.style.kamus_kuis_button_answer_default);
 
             if (i == kuis.getJawaBenar()) {
@@ -173,6 +175,6 @@ public class FragmentKuis extends Fragment implements View.OnClickListener {
                 kuisAdapter.setTime(diff);
                 ((ConnectionFragmentKuis) getActivity()).nextKuis(kuis, kuisAdapter);
             }
-        }, 100);
+        }, 400);
     }
 }

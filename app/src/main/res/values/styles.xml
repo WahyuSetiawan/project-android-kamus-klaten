@@ -220,5 +220,39 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="kamus.string.dialog.title">
+        <item name="android:textSize">22dp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">?attr/colorKuisTitleDialog</item>
+    </style>
 
+    <style name="kamus.string.dialog.version">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">?attr/colorKuisVersionDialog</item>
+    </style>
+
+    <style name="kamus.string.dialog.description">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/segoeui</item>
+        <item name="android:textColor">?attr/colorKuisDescriptionDialog</item>
+    </style>
+
+    <style name="kamus.button.rate">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textColor">?attr/colorAccentMode</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="kamus.button.share">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">#FBFBFB</item>
+        <item name="android:background">?attr/colorAccentMode</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="kamus.string.dialog" />
+
+    <style name="kamus.button" />
 </resources>
