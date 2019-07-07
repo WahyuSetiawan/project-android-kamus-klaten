@@ -1,9 +1,9 @@
-package cyber.com.kamus.preferences;
+package cyber.com.kawruh.preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import cyber.com.kamus.R;
+import cyber.com.kawruh.R;
 
 public class PreferencesSetting {
     private final String PREVERENCES_KAMUS = "PREFERENCES_KAMUS";

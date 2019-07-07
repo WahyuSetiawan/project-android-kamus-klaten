@@ -1,4 +1,4 @@
-package cyber.com.kamus.util.decoration;
+package cyber.com.kawruh.util.decoration;
 
 import android.content.Context;
 import android.graphics.Rect;

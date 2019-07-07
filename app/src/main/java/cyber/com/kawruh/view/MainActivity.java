@@ -1,4 +1,4 @@
-package cyber.com.kamus.view;
+package cyber.com.kawruh.view;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -6,16 +6,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.databinding.ActivityNavigationBinding;
-import cyber.com.kamus.view.fragment.FragmentCategory;
-import cyber.com.kamus.view.fragment.FragmentDaftarKuis;
-import cyber.com.kamus.view.fragment.FragmentSearch;
-import cyber.com.kamus.view.fragment.FragmentSetting;
-import cyber.com.kamus.util.Helper;
-import cyber.com.kamus.view.viewmodel.ViewModelMainActivity;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.databinding.ActivityNavigationBinding;
+import cyber.com.kawruh.view.fragment.FragmentCategory;
+import cyber.com.kawruh.view.fragment.FragmentDaftarKuis;
+import cyber.com.kawruh.view.fragment.FragmentSearch;
+import cyber.com.kawruh.view.fragment.FragmentSetting;
+import cyber.com.kawruh.util.Helper;
+import cyber.com.kawruh.view.viewmodel.ViewModelMainActivity;
 
 public class MainActivity extends AppCompatActivity implements ViewModelMainActivity.Action {
     private ActivityNavigationBinding binding;

@@ -1,4 +1,4 @@
-package cyber.com.kamus.view.fragment;
+package cyber.com.kawruh.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cyber.com.kamus.R;
+import cyber.com.kawruh.R;
 
 public class FragmentPengaturan extends Fragment {
     private static final String TYPE_PENGATURAN = "type_pengaturan";

@@ -1,12 +1,9 @@
-package cyber.com.kamus.model;
+package cyber.com.kawruh.model;
 
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
-import cyber.com.kamus.adapter.AdapterColor;
-import cyber.com.kamus.util.listener.ListenerView;
-import cyber.com.kamus.util.listener.ListenerViewHolder;
-import cyber.com.kamus.view.fragment.FragmentPengaturan;
+import cyber.com.kawruh.util.listener.ListenerView;
+import cyber.com.kawruh.view.fragment.FragmentPengaturan;
 
 public class Setting {
     String name;

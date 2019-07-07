@@ -1,6 +1,2 @@
 hewan, icon_hewan
-kata kasar, icon_kata_kasar
-keluarga, icon_keluarga
-mainan, icon_mainan
-orang, icon_orang
 tanaman, icon_tanaman

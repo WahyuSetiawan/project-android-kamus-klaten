@@ -1,4 +1,4 @@
-package cyber.com.kamus.view.fragment;
+package cyber.com.kawruh.view.fragment;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,14 +15,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.adapter.AdapterKuis;
-import cyber.com.kamus.database.database.Database;
-import cyber.com.kamus.databinding.FragmentKuisBinding;
-import cyber.com.kamus.model.KuisAdapter;
-import cyber.com.kamus.util.decoration.GridItemDecoration;
-import cyber.com.kamus.util.listener.ListenerView;
-import cyber.com.kamus.view.KuisActivity;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.adapter.AdapterKuis;
+import cyber.com.kawruh.database.database.Database;
+import cyber.com.kawruh.databinding.FragmentKuisBinding;
+import cyber.com.kawruh.model.KuisAdapter;
+import cyber.com.kawruh.util.decoration.GridItemDecoration;
+import cyber.com.kawruh.util.listener.ListenerView;
+import cyber.com.kawruh.view.KuisActivity;
 
 public class FragmentDaftarKuis extends Fragment {
     public static final int KODE_RESULT = 10;

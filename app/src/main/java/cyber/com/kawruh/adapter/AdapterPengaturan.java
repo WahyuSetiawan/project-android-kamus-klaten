@@ -1,4 +1,4 @@
-package cyber.com.kamus.adapter;
+package cyber.com.kawruh.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
@@ -11,15 +11,15 @@ import android.widget.CompoundButton;
 
 import java.util.ArrayList;
 
-import cyber.com.kamus.preferences.PreferencesSetting;
-import cyber.com.kamus.R;
-import cyber.com.kamus.databinding.FragmentPengaturanChangeModeBinding;
-import cyber.com.kamus.databinding.FragmentPengaturanColorBinding;
-import cyber.com.kamus.databinding.FragmentPengaturanDirectionBinding;
-import cyber.com.kamus.model.Setting;
-import cyber.com.kamus.util.decoration.GridItemDecoration;
-import cyber.com.kamus.util.listener.ListenerView;
-import cyber.com.kamus.view.fragment.FragmentPengaturan;
+import cyber.com.kawruh.preferences.PreferencesSetting;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.databinding.FragmentPengaturanChangeModeBinding;
+import cyber.com.kawruh.databinding.FragmentPengaturanColorBinding;
+import cyber.com.kawruh.databinding.FragmentPengaturanDirectionBinding;
+import cyber.com.kawruh.model.Setting;
+import cyber.com.kawruh.util.decoration.GridItemDecoration;
+import cyber.com.kawruh.util.listener.ListenerView;
+import cyber.com.kawruh.view.fragment.FragmentPengaturan;
 
 public class AdapterPengaturan extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<Setting> pengaturans = new ArrayList();

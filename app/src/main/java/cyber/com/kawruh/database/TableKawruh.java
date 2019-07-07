@@ -1,4 +1,4 @@
-package cyber.com.kamus.database;
+package cyber.com.kawruh.database;
 
 
 import android.content.ContentValues;
@@ -13,11 +13,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import cyber.com.kamus.adapter.AdapterSearch;
-import cyber.com.kamus.database.parent.Table;
-import cyber.com.kamus.model.Kamus;
-import cyber.com.kamus.model.SearchResult;
-import cyber.com.kamus.view.fragment.FragmentSearch;
+import cyber.com.kawruh.adapter.AdapterSearch;
+import cyber.com.kawruh.database.parent.Table;
+import cyber.com.kawruh.model.Kamus;
+import cyber.com.kawruh.model.SearchResult;
+import cyber.com.kawruh.view.fragment.FragmentSearch;
 
 public class TableKawruh extends Table {
     public static final String INDONESIA = "indonesia";

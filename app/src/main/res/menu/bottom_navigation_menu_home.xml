@@ -3,7 +3,7 @@
     <item
         android:id="@+id/menu_kamus_jawa"
         android:icon="@drawable/ic_import_contacts_black_24dp"
-        android:title="Kamus Jawa" />
+        android:title="Kawruh Jawa" />
 
     <item
         android:id="@+id/menu_kategori"

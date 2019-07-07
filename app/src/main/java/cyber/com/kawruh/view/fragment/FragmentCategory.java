@@ -1,4 +1,4 @@
-package cyber.com.kamus.view.fragment;
+package cyber.com.kawruh.view.fragment;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -13,14 +13,14 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.adapter.AdapterKategori;
-import cyber.com.kamus.database.database.Database;
-import cyber.com.kamus.databinding.FragmentCategoryBinding;
-import cyber.com.kamus.model.Kategori;
-import cyber.com.kamus.util.decoration.GridItemDecoration;
-import cyber.com.kamus.util.listener.ListenerView;
-import cyber.com.kamus.view.CategoryActivity;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.adapter.AdapterKategori;
+import cyber.com.kawruh.database.database.Database;
+import cyber.com.kawruh.databinding.FragmentCategoryBinding;
+import cyber.com.kawruh.model.Kategori;
+import cyber.com.kawruh.util.decoration.GridItemDecoration;
+import cyber.com.kawruh.util.listener.ListenerView;
+import cyber.com.kawruh.view.CategoryActivity;
 
 public class FragmentCategory extends Fragment {
     FragmentCategoryBinding binding;

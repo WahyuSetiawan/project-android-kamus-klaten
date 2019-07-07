@@ -1,4 +1,4 @@
-package cyber.com.kamus.util.listener;
+package cyber.com.kawruh.util.listener;
 
 public interface InterfaceDatabase {
     void onCreate();

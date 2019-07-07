@@ -1,8 +1,45 @@
 Anak Ampal, Embug, hewan
 Anak Anjing, Kirik, hewan
+Anak Ayam, Kuthuk, hewan
 Anak Babi, gambluk, hewan
 Anak Ikan Bandeng, Nener ,hewan
 Anak Bantheng, Warek, hewan
-bakso, bakso, keluarga
-balik, walik, keluarga
-catetan, cathetan, keluarga
+Anak Cacing, Lur, hewan
+Anak Cecak, Sawiyah, hewan
+Anak Celeng, Genjik, hewan
+Anak Dara, Piyik, hewan
+Anak Ikan, Beyong, hewan
+Anak Jaran, Belo, hewan
+Anak Jangkrik, Gendholo, hewan
+Anak Kadal, Tobil, hewan
+Anak Kakap, Caplek, hewan
+Anak Lutung, Kowe, hewan
+Anak Luwak, Kuwuk, hewan
+Anak Luwing, Gonggo, hewan
+Anak Macan, Gogor, hewan
+Anak Burung, Piyik, hewan
+Anak Sapi, Pedhet, hewan
+Anak Singa, Dibal, hewan
+Anak Wader, Sriwet, hewan
+Anak Walang, Dhogol, hewan
+Aren, Dliring, tanaman
+Asem, Sinom, tanaman
+Cocor Bebek, Tiba Urip, tanaman
+Dhadhap, Tawa, tanaman
+Dhadhap Tuwa, Unjungan, tanaman
+Jambe, Procot, tanaman
+Jarak, Bledheg, tanaman
+Jati, Jompong, tanaman
+Kacang Brol, Rendeng, tanaman
+Kecipir, Cethethet, tanaman
+Lempuyangan, Lirih, tanaman
+Cabe, Sabrang, tanaman
+Mlinjo, So, tanaman
+Padi, Damen, tanaman
+Bambu, Elarmanyura, tanaman
+Randhu, Baladewa, tanaman
+Siwalan, Lontar, tanaman
+Semanggir, Gudha, tanaman
+Talas, Lumbu, tanaman
+Tebu Kering, Rapak, tanaman
+Tebu Basah, Momol, tanaman

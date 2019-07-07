@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="cyber.com.kamus.view.viewmodel.ViewModelMainActivity" />
+            type="cyber.com.kawruh.view.viewmodel.ViewModelMainActivity" />
     </data>
 
     <android.support.constraint.ConstraintLayout

@@ -1,4 +1,4 @@
-package cyber.com.kamus.view.fragment;
+package cyber.com.kawruh.view.fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,16 +15,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
-import cyber.com.kamus.preferences.PreferencesSetting;
-import cyber.com.kamus.R;
-import cyber.com.kamus.adapter.AdapterColor;
-import cyber.com.kamus.adapter.AdapterPengaturan;
-import cyber.com.kamus.databinding.FragmentPengaturanBinding;
-import cyber.com.kamus.model.Setting;
-import cyber.com.kamus.util.Helper;
-import cyber.com.kamus.util.listener.ListenerView;
-import cyber.com.kamus.view.BantuanActivity;
-import cyber.com.kamus.view.TentangActivity;
+import cyber.com.kawruh.preferences.PreferencesSetting;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.adapter.AdapterColor;
+import cyber.com.kawruh.adapter.AdapterPengaturan;
+import cyber.com.kawruh.databinding.FragmentPengaturanBinding;
+import cyber.com.kawruh.model.Setting;
+import cyber.com.kawruh.util.Helper;
+import cyber.com.kawruh.util.listener.ListenerView;
+import cyber.com.kawruh.view.BantuanActivity;
+import cyber.com.kawruh.view.TentangActivity;
 
 public class FragmentSetting extends Fragment {
     public static final String TAG = FragmentSetting.class.getSimpleName();

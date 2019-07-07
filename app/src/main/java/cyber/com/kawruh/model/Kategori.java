@@ -1,4 +1,4 @@
-package cyber.com.kamus.model;
+package cyber.com.kawruh.model;
 
 public class Kategori {
     private int id;

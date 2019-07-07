@@ -1,4 +1,4 @@
-package cyber.com.kamus.view.fragment;
+package cyber.com.kawruh.view.fragment;
 
 import android.content.res.ColorStateList;
 import android.databinding.DataBindingUtil;
@@ -17,16 +17,15 @@ import android.widget.LinearLayout;
 
 import com.airbnb.paris.Paris;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.databinding.FragmentKuisSingleBinding;
-import cyber.com.kamus.model.Kuis;
-import cyber.com.kamus.model.KuisAdapter;
-import cyber.com.kamus.preferences.AttrHelper;
-import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.databinding.FragmentKuisSingleBinding;
+import cyber.com.kawruh.model.Kuis;
+import cyber.com.kawruh.model.KuisAdapter;
+import cyber.com.kawruh.preferences.AttrHelper;
+import cyber.com.kawruh.util.listener.ConnectionFragmentKuis;
 
 public class FragmentKuis extends Fragment implements View.OnClickListener {
     public static final String KUIS = "KUIS";

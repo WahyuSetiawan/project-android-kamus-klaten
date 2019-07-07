@@ -1,13 +1,13 @@
-package cyber.com.kamus.view;
+package cyber.com.kawruh.view;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.databinding.ActivityTentangBinding;
-import cyber.com.kamus.util.Helper;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.databinding.ActivityTentangBinding;
+import cyber.com.kawruh.util.Helper;
 
 public class TentangActivity extends AppCompatActivity {
 

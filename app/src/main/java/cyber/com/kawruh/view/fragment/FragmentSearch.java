@@ -1,4 +1,4 @@
-package cyber.com.kamus.view.fragment;
+package cyber.com.kawruh.view.fragment;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -16,11 +16,11 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.adapter.AdapterSearch;
-import cyber.com.kamus.database.database.Database;
-import cyber.com.kamus.databinding.FragmentSearchBinding;
-import cyber.com.kamus.util.decoration.LinearItemDecoration;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.adapter.AdapterSearch;
+import cyber.com.kawruh.database.database.Database;
+import cyber.com.kawruh.databinding.FragmentSearchBinding;
+import cyber.com.kawruh.util.decoration.LinearItemDecoration;
 
 public class FragmentSearch extends Fragment {
     public static final String BAHASA_JAWA = "Bahasa Jawa";
@@ -94,11 +94,12 @@ public class FragmentSearch extends Fragment {
             }
         });
 
-        adapterSearchIndonesia.setSearchResults(
-                database.getTableKawruh().selectAllToHashMapGroup(AdapterSearch.SearchFrom.fromIndonesia)
-        );
+
         adapterSearchJawa.setSearchResults(
                 database.getTableKawruh().selectAllToHashMapGroup(AdapterSearch.SearchFrom.fromJawa)
+        );
+        adapterSearchIndonesia.setSearchResults(
+                database.getTableKawruh().selectAllToHashMapGroup(AdapterSearch.SearchFrom.fromIndonesia)
         );
     }
 
@@ -116,7 +117,7 @@ public class FragmentSearch extends Fragment {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            if (s.length() > 0){
+            if (s.length() > 0) {
                 binding.back.setVisibility(View.VISIBLE);
                 Glide.with(binding.clear).load(R.drawable.ic_close_black_24dp).into(binding.clear);
                 binding.clear.setOnClickListener(new View.OnClickListener() {
@@ -125,7 +126,7 @@ public class FragmentSearch extends Fragment {
                         binding.search.setText("");
                     }
                 });
-            }else{
+            } else {
                 binding.back.setVisibility(View.GONE);
                 Glide.with(binding.clear).load(R.drawable.ic_search_black_24dp).into(binding.clear);
                 binding.clear.setOnClickListener(new View.OnClickListener() {
@@ -150,8 +151,17 @@ public class FragmentSearch extends Fragment {
         @Override
         public void onChanged() {
             super.onChanged();
-            if (adapterSearchIndonesia != null || adapterSearchJawa != null) {
-                if (adapterSearchIndonesia.getItemCount() <= 0 || adapterSearchJawa.getItemCount() <= 0) {
+
+            if (binding.tabCategory.getSelectedTabPosition() == 0) {
+                if (adapterSearchJawa.getItemCount() <= 0) {
+                    binding.backgroundrecycler.setVisibility(View.VISIBLE);
+                    binding.recycler.setVisibility(View.GONE);
+                } else {
+                    binding.backgroundrecycler.setVisibility(View.GONE);
+                    binding.recycler.setVisibility(View.VISIBLE);
+                }
+            } else {
+                if (adapterSearchIndonesia.getItemCount() <= 0) {
                     binding.backgroundrecycler.setVisibility(View.VISIBLE);
                     binding.recycler.setVisibility(View.GONE);
                 } else {
@@ -167,8 +177,24 @@ public class FragmentSearch extends Fragment {
         public void onTabSelected(TabLayout.Tab tab) {
             if (tab.getText().equals(BAHASA_JAWA)) {
                 binding.recycler.setAdapter(adapterSearchJawa);
+
+                if (adapterSearchJawa.getItemCount() <= 0) {
+                    binding.backgroundrecycler.setVisibility(View.VISIBLE);
+                    binding.recycler.setVisibility(View.GONE);
+                } else {
+                    binding.backgroundrecycler.setVisibility(View.GONE);
+                    binding.recycler.setVisibility(View.VISIBLE);
+                }
             } else {
                 binding.recycler.setAdapter(adapterSearchIndonesia);
+
+                if (adapterSearchIndonesia.getItemCount() <= 0) {
+                    binding.backgroundrecycler.setVisibility(View.VISIBLE);
+                    binding.recycler.setVisibility(View.GONE);
+                } else {
+                    binding.backgroundrecycler.setVisibility(View.GONE);
+                    binding.recycler.setVisibility(View.VISIBLE);
+                }
             }
         }
 

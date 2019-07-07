@@ -1,4 +1,4 @@
-package cyber.com.kamus.database;
+package cyber.com.kawruh.database;
 
 import android.support.test.InstrumentationRegistry;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import cyber.com.kamus.database.database.Database;
+import cyber.com.kawruh.database.database.Database;
 
 public class DatabaseTest {
     Database database;

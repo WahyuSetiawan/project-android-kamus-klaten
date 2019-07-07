@@ -1,18 +1,18 @@
-package cyber.com.kamus.database.database;
+package cyber.com.kawruh.database.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
-import cyber.com.kamus.database.TableCategory;
-import cyber.com.kamus.database.TableKawruh;
-import cyber.com.kamus.database.TableKuis;
+import cyber.com.kawruh.database.TableCategory;
+import cyber.com.kawruh.database.TableKawruh;
+import cyber.com.kawruh.database.TableKuis;
 
 public class Database extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "DATABASE_KAMUS";
 
-    private static final int VERSION = 8;
+    private static final int VERSION = 9;
     private final Context context;
 
     private TableCategory tableCategory;
@@ -53,18 +53,18 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public TableKawruh getTableKawruh() {
-        if (tableKawruh == null) {
-            tableKawruh = new TableKawruh(context, this.getWritableDatabase());
-        }
+//        if (tableKawruh == null) {
+//            tableKawruh = new TableKawruh(context, this.getWritableDatabase());
+//        }
 
-        return tableKawruh;
+        return new TableKawruh(context, this.getWritableDatabase());
     }
 
     public TableKuis getTableKuis() {
-        if (tableKuis == null) {
-            tableKuis = new TableKuis(context, this.getWritableDatabase());
-        }
+//        if (tableKuis == null) {
+//            tableKuis = new TableKuis(context, this.getWritableDatabase());
+//        }
 
-        return tableKuis;
+        return new TableKuis(context, this.getWritableDatabase());
     }
 }

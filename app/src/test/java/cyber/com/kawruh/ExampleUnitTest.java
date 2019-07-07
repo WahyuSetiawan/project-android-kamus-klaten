@@ -1,4 +1,4 @@
-package cyber.com.kamus;
+package cyber.com.kawruh;
 
 import org.junit.Test;
 

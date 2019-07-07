@@ -1,11 +1,11 @@
-package cyber.com.kamus.preferences;
+package cyber.com.kawruh.preferences;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 
-import cyber.com.kamus.R;
+import cyber.com.kawruh.R;
 
 public class AttrHelper {
     private final Context context;

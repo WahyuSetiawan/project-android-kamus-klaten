@@ -1,4 +1,4 @@
-package cyber.com.kamus.view;
+package cyber.com.kawruh.view;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -7,11 +7,11 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.adapter.AdapterSearch;
-import cyber.com.kamus.database.database.Database;
-import cyber.com.kamus.databinding.ActivityCategoryBinding;
-import cyber.com.kamus.util.Helper;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.adapter.AdapterSearch;
+import cyber.com.kawruh.database.database.Database;
+import cyber.com.kawruh.databinding.ActivityCategoryBinding;
+import cyber.com.kawruh.util.Helper;
 
 public class CategoryActivity extends AppCompatActivity {
     ActivityCategoryBinding binding;

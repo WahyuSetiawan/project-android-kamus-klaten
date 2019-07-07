@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="cyber.com.kamus">
+    package="cyber.com.kawruh">
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".view.MainActivity"
+            android:name="cyber.com.kawruh.view.MainActivity"
             android:theme="@style/AppTheme.noActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,16 +21,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.BantuanActivity"
+            android:name="cyber.com.kawruh.view.BantuanActivity"
             android:theme="@style/AppTheme.noActionBar" />
         <activity
-            android:name=".view.TentangActivity"
+            android:name="cyber.com.kawruh.view.TentangActivity"
             android:theme="@style/AppTheme.noActionBar" />
         <activity
-            android:name=".view.CategoryActivity"
+            android:name="cyber.com.kawruh.view.CategoryActivity"
             android:theme="@style/AppTheme.noActionBar" />
         <activity
-            android:name=".view.KuisActivity"
+            android:name="cyber.com.kawruh.view.KuisActivity"
             android:theme="@style/AppTheme.noActionBar">
 
         </activity>

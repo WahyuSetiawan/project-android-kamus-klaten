@@ -1,8 +1,6 @@
-package cyber.com.kamus.model;
+package cyber.com.kawruh.model;
 
-import java.util.logging.Filter;
-
-import cyber.com.kamus.adapter.AdapterSearch;
+import cyber.com.kawruh.adapter.AdapterSearch;
 
 public class SearchResult {
     private String title;

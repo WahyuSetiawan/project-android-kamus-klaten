@@ -1,23 +1,20 @@
-package cyber.com.kamus.adapter;
+package cyber.com.kawruh.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.databinding.ViewHolderCategoryBinding;
-import cyber.com.kamus.model.Kategori;
-import cyber.com.kamus.util.listener.ListenerView;
-import cyber.com.kamus.util.listener.ListenerViewHolder;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.databinding.ViewHolderCategoryBinding;
+import cyber.com.kawruh.model.Kategori;
+import cyber.com.kawruh.util.listener.ListenerView;
 
 public class AdapterKategori extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<Kategori> kategoris = new ArrayList<>();

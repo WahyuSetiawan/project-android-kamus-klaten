@@ -1,4 +1,4 @@
-package cyber.com.kamus.adapter;
+package cyber.com.kawruh.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
@@ -11,12 +11,11 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import cyber.com.kamus.model.KuisAdapter;
-import cyber.com.kamus.preferences.AttrHelper;
-import cyber.com.kamus.R;
-import cyber.com.kamus.databinding.ViewHolderKuisBinding;
-import cyber.com.kamus.model.Kuis;
-import cyber.com.kamus.util.listener.ListenerView;
+import cyber.com.kawruh.model.KuisAdapter;
+import cyber.com.kawruh.preferences.AttrHelper;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.databinding.ViewHolderKuisBinding;
+import cyber.com.kawruh.util.listener.ListenerView;
 
 public class AdapterKuis extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<KuisAdapter> kuis = new ArrayList<>();

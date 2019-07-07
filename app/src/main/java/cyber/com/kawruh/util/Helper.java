@@ -1,4 +1,4 @@
-package cyber.com.kamus.util;
+package cyber.com.kawruh.util;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-import cyber.com.kamus.preferences.PreferencesSetting;
+import cyber.com.kawruh.preferences.PreferencesSetting;
 
 public class Helper {
     public static final String TAG = Helper.class.getSimpleName();

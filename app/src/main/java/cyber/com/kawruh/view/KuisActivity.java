@@ -1,4 +1,4 @@
-package cyber.com.kamus.view;
+package cyber.com.kawruh.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,15 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Random;
 
-import cyber.com.kamus.R;
-import cyber.com.kamus.database.database.Database;
-import cyber.com.kamus.model.Kamus;
-import cyber.com.kamus.model.Kuis;
-import cyber.com.kamus.model.KuisAdapter;
-import cyber.com.kamus.util.Helper;
-import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
-import cyber.com.kamus.view.fragment.FragmentFinishKuis;
-import cyber.com.kamus.view.fragment.FragmentKuis;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.database.database.Database;
+import cyber.com.kawruh.model.Kamus;
+import cyber.com.kawruh.model.Kuis;
+import cyber.com.kawruh.model.KuisAdapter;
+import cyber.com.kawruh.util.Helper;
+import cyber.com.kawruh.util.listener.ConnectionFragmentKuis;
+import cyber.com.kawruh.view.fragment.FragmentFinishKuis;
+import cyber.com.kawruh.view.fragment.FragmentKuis;
 
 public class KuisActivity extends AppCompatActivity implements ConnectionFragmentKuis {
     public static final String KUISDATA = "KUISDATA";

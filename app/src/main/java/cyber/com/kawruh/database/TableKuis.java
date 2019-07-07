@@ -1,4 +1,4 @@
-package cyber.com.kamus.database;
+package cyber.com.kawruh.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
-import cyber.com.kamus.database.parent.Table;
-import cyber.com.kamus.model.KuisAdapter;
+import cyber.com.kawruh.database.parent.Table;
+import cyber.com.kawruh.model.KuisAdapter;
 
 public class TableKuis extends Table {
     public static final String ID = "id";

@@ -1,4 +1,4 @@
-package cyber.com.kamus.adapter;
+package cyber.com.kawruh.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import cyber.com.kamus.preferences.PreferencesSetting;
-import cyber.com.kamus.R;
-import cyber.com.kamus.databinding.ViewHolderColorBinding;
-import cyber.com.kamus.util.listener.ListenerView;
+import cyber.com.kawruh.preferences.PreferencesSetting;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.databinding.ViewHolderColorBinding;
+import cyber.com.kawruh.util.listener.ListenerView;
 
 public class AdapterColor extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<Integer> color = new ArrayList<>();

@@ -1,7 +1,6 @@
-package cyber.com.kamus.view.fragment;
+package cyber.com.kawruh.view.fragment;
 
 import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,13 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-
-import cyber.com.kamus.R;
-import cyber.com.kamus.databinding.FragmentKuisFinishBinding;
-import cyber.com.kamus.model.Kuis;
-import cyber.com.kamus.model.KuisAdapter;
-import cyber.com.kamus.util.listener.ConnectionFragmentKuis;
+import cyber.com.kawruh.R;
+import cyber.com.kawruh.databinding.FragmentKuisFinishBinding;
+import cyber.com.kawruh.model.KuisAdapter;
+import cyber.com.kawruh.util.listener.ConnectionFragmentKuis;
 
 public class FragmentFinishKuis extends Fragment {
     public static final String SCOREARGS = "SCOREARGS";

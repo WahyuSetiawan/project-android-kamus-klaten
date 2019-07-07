@@ -1,4 +1,4 @@
-package cyber.com.kamus.database.parent;
+package cyber.com.kawruh.database.parent;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

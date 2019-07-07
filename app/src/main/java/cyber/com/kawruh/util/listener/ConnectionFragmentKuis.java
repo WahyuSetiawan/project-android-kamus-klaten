@@ -1,7 +1,7 @@
-package cyber.com.kamus.util.listener;
+package cyber.com.kawruh.util.listener;
 
-import cyber.com.kamus.model.Kuis;
-import cyber.com.kamus.model.KuisAdapter;
+import cyber.com.kawruh.model.Kuis;
+import cyber.com.kawruh.model.KuisAdapter;
 
 public interface ConnectionFragmentKuis {
     void close();
