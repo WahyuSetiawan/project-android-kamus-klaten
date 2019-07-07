@@ -48,6 +48,12 @@
             @color/kamus_kuis_text_button_false_mode_default
         </item>
 
+        //variable
+        <item name="colorKuisCloseDialog">@color/kamus_dialog_close_tint_mode_default</item>
+        <item name="colorKuisTitleDialog">@color/kamus_dialog_title_mode_default</item>
+        <item name="colorKuisVersionDialog">@color/kamus_dialog_version_mode_default</item>
+        <item name="colorKuisDescriptionDialog">@color/kamus_dialog_description_mode_default</item>
+
         //kuis finish
         <item name="colorKuisFinish">
             @color/kamus_finish_kuis_button_mode_default
@@ -135,6 +141,12 @@
         <item name="colorKuisButtonTextAnswerFalse">
             @color/kamus_kuis_text_button_false_mode_malam
         </item>
+
+        //variable dialog
+        <item name="colorKuisCloseDialog">@color/kamus_dialog_close_tint_mode_malam</item>
+        <item name="colorKuisTitleDialog">@color/kamus_dialog_title_mode_malam</item>
+        <item name="colorKuisVersionDialog">@color/kamus_dialog_version_mode_malam</item>
+        <item name="colorKuisDescriptionDialog">@color/kamus_dialog_description_mode_malam</item>
 
         //variable
         <item name="colorKuisFinish">

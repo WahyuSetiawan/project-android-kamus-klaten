@@ -1,11 +1,13 @@
 package cyber.com.kawruh.view.fragment;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,8 +15,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 
+import cyber.com.kawruh.databinding.DialogTentangBinding;
 import cyber.com.kawruh.preferences.PreferencesSetting;
 import cyber.com.kawruh.R;
 import cyber.com.kawruh.adapter.AdapterColor;
@@ -51,7 +55,8 @@ public class FragmentSetting extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         return (binding = DataBindingUtil.inflate(inflater, R.layout.fragment_pengaturan, container, false))
                 .getRoot();
     }
@@ -61,7 +66,8 @@ public class FragmentSetting extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final AdapterPengaturan adapter = new AdapterPengaturan();
-        binding.recycler.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false));
+        binding.recycler.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL,
+                false));
         binding.recycler.setAdapter(adapter);
 
         final AdapterColor adapterColor = new AdapterColor();
@@ -144,8 +150,44 @@ public class FragmentSetting extends Fragment {
         tentang.setOnClickViewHolder(new ListenerView.onClickViewHolder() {
             @Override
             public void onClickListener(View view, Integer position) {
-                Intent intent = new Intent(FragmentSetting.this.getContext(), TentangActivity.class);
-                startActivity(intent);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext());
+                DialogTentangBinding viewDialog = DataBindingUtil.inflate(getLayoutInflater(), R.layout.dialog_tentang,
+                        ((ViewGroup) getView().getParent()), false);
+                alertDialog.setView(viewDialog.getRoot());
+
+                final AlertDialog dialog = alertDialog.create();
+                dialog.show();
+
+                dialog.getWindow().setBackgroundDrawable(
+                        getResources().getDrawable(R.drawable.background_dialog)
+                );
+
+                WindowManager.LayoutParams layoutParams = dialog.getWindow().getAttributes();
+                layoutParams.width = 600;
+                dialog.getWindow().setAttributes(layoutParams);
+
+                viewDialog.closeArea.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                        Toast.makeText(getContext(), "Terclick", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                });
+
+                viewDialog.rateus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
+                viewDialog.sharethisapp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
             }
         });
     }
@@ -161,4 +203,5 @@ public class FragmentSetting extends Fragment {
         outState.putString("a", "asdfasdfasd");
         super.onSaveInstanceState(outState);
     }
+
 }

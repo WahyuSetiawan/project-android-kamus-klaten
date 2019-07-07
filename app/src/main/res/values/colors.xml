@@ -98,4 +98,17 @@
     <color name="kamus_finish_kuis_button_mode_malam">#798A97</color>
     <color name="kamus_finish_kuis_button_mode_default">#757575</color>
 
+    <color name="kamus_dialog_close_tint_mode_malam">#8697A4</color>
+    <color name="kamus_dialog_close_tint_mode_default">#40000000</color>
+
+    <color name="kamus_dialog_title_mode_default">#15202B</color>
+    <color name="kamus_dialog_title_mode_malam">#FBFBFB</color>
+
+    <color name="kamus_dialog_version_mode_default">#15202B</color>
+    <color name="kamus_dialog_version_mode_malam">#FBFBFB</color>
+
+    <color name="kamus_dialog_description_mode_default">#212121</color>
+    <color name="kamus_dialog_description_mode_malam">#FBFBFB</color>
+
+
 </resources>

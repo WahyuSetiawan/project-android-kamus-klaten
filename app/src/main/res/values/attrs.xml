@@ -26,6 +26,12 @@
     <attr name="colorKuisButtonTextAnswerFalse" format="color" />
     <attr name="colorKuisTextTitle" format="color" />
 
+    //variable kamus dialog
+    <attr name="colorKuisCloseDialog" format="color" />
+    <attr name="colorKuisTitleDialog" format="color" />
+    <attr name="colorKuisVersionDialog" format="color" />
+    <attr name="colorKuisDescriptionDialog" format="color" />
+
     //variable
     <attr name="colorKuisFinish" format="color" />
 </resources>
