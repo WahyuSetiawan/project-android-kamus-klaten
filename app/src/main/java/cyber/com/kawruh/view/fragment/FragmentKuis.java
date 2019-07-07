@@ -40,7 +40,7 @@ public class FragmentKuis extends Fragment implements View.OnClickListener {
     private String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private Handler handler = new Handler();
     private Runnable runnable;
-    private Date start_date ;
+    private Date start_date;
     private long diff = 0;
 
     public static FragmentKuis init(Kuis kuis, KuisAdapter kuisAdapter) {
@@ -74,7 +74,10 @@ public class FragmentKuis extends Fragment implements View.OnClickListener {
                         long Minutes = diff / (60 * 1000) % 60;
                         long Seconds = diff / 1000 % 60;
 
-                        binding.time.setText("Waktu " + Minutes + ":" + Seconds);
+                        String min = "0" + Minutes;
+                        String sec = "0" + Seconds;
+
+                        binding.time.setText("Waktu " + min.substring(min.length() - 2, 2) + ":" + sec.substring(sec.length() - 2, 2));
 
                     } else {
                         handler.removeCallbacks(runnable);

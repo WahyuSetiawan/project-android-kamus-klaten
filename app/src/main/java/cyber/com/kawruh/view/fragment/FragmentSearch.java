@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+
 import cyber.com.kamus.R;
 import cyber.com.kamus.adapter.AdapterSearch;
 import cyber.com.kamus.database.database.Database;
@@ -85,11 +87,18 @@ public class FragmentSearch extends Fragment {
         adapterSearchIndonesia.registerAdapterDataObserver(observer);
         adapterSearchJawa.registerAdapterDataObserver(observer);
 
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.search.setText("");
+            }
+        });
+
         adapterSearchIndonesia.setSearchResults(
-                database.getTableKamus().selectAllToHashMapGroup(AdapterSearch.SearchFrom.fromIndonesia)
+                database.getTableKawruh().selectAllToHashMapGroup(AdapterSearch.SearchFrom.fromIndonesia)
         );
         adapterSearchJawa.setSearchResults(
-                database.getTableKamus().selectAllToHashMapGroup(AdapterSearch.SearchFrom.fromJawa)
+                database.getTableKawruh().selectAllToHashMapGroup(AdapterSearch.SearchFrom.fromJawa)
         );
     }
 
@@ -107,6 +116,26 @@ public class FragmentSearch extends Fragment {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
+            if (s.length() > 0){
+                binding.back.setVisibility(View.VISIBLE);
+                Glide.with(binding.clear).load(R.drawable.ic_close_black_24dp).into(binding.clear);
+                binding.clear.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        binding.search.setText("");
+                    }
+                });
+            }else{
+                binding.back.setVisibility(View.GONE);
+                Glide.with(binding.clear).load(R.drawable.ic_search_black_24dp).into(binding.clear);
+                binding.clear.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+            }
+
             adapterSearchIndonesia.getFilter().filter(s.toString());
             adapterSearchJawa.getFilter().filter(s.toString());
         }

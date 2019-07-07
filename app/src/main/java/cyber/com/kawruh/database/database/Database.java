@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
 import cyber.com.kamus.database.TableCategory;
-import cyber.com.kamus.database.TableKamus;
+import cyber.com.kamus.database.TableKawruh;
 import cyber.com.kamus.database.TableKuis;
 
 public class Database extends SQLiteOpenHelper {
@@ -16,7 +16,7 @@ public class Database extends SQLiteOpenHelper {
     private final Context context;
 
     private TableCategory tableCategory;
-    private TableKamus tableKamus;
+    private TableKawruh tableKawruh;
     private TableKuis tableKuis;
 
     public Database(@Nullable Context context) {
@@ -27,18 +27,18 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         new TableCategory(context, db).onCreateTable();
-        new TableKamus(context, db).onCreateTable();
+        new TableKawruh(context, db).onCreateTable();
         new TableKuis(context, db).onCreateTable();
 
         new TableCategory(context, db).onInsertData();
-        new TableKamus(context, db).onInsertData();
+        new TableKawruh(context, db).onInsertData();
         new TableKuis(context, db).onInsertData();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         new TableCategory(context, db).onUpdate();
-        new TableKamus(context, db).onUpdate();
+        new TableKawruh(context, db).onUpdate();
         new TableKuis(context, db).onUpdate();
 
         onCreate(db);
@@ -52,12 +52,12 @@ public class Database extends SQLiteOpenHelper {
         return tableCategory;
     }
 
-    public TableKamus getTableKamus() {
-        if (tableKamus == null) {
-            tableKamus = new TableKamus(context, this.getWritableDatabase());
+    public TableKawruh getTableKawruh() {
+        if (tableKawruh == null) {
+            tableKawruh = new TableKawruh(context, this.getWritableDatabase());
         }
 
-        return tableKamus;
+        return tableKawruh;
     }
 
     public TableKuis getTableKuis() {

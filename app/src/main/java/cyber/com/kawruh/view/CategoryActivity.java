@@ -41,7 +41,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             binding.recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
             binding.recycler.setAdapter(this.adapter);
-            this.adapter.setSearchResults(database.getTableKamus().selectAllToHas(AdapterSearch.SearchFrom.fromIndonesia, category));
+            this.adapter.setSearchResults(database.getTableKawruh().selectAllToHas(AdapterSearch.SearchFrom.fromIndonesia, category));
         }
     }
 

@@ -51,7 +51,7 @@ public class KuisActivity extends AppCompatActivity implements ConnectionFragmen
         }
 
         database = new Database(this);
-        tempDataKamus = database.getTableKamus().getKuis();
+        tempDataKamus = database.getTableKawruh().getKuis();
 
         for (Kamus kamus : tempDataKamus) {
             Kuis kuis = new Kuis();

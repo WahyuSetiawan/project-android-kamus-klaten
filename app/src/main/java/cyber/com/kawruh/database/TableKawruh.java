@@ -19,13 +19,13 @@ import cyber.com.kamus.model.Kamus;
 import cyber.com.kamus.model.SearchResult;
 import cyber.com.kamus.view.fragment.FragmentSearch;
 
-public class TableKamus extends Table {
+public class TableKawruh extends Table {
     public static final String INDONESIA = "indonesia";
     public static final String JAWA = "jawa";
     public static final String KATEGORI = "category";
     public static final String ID = "id";
 
-    public TableKamus(Context context, SQLiteDatabase database) {
+    public TableKawruh(Context context, SQLiteDatabase database) {
         super(context, database, "kamus");
     }
 
